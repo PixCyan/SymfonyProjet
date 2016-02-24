@@ -1,0 +1,11 @@
+vitrine_homepage:
+    path:     /accueil/{visiteur}
+    defaults: { _controller: VitrineBundle:Default:index }
+
+mentions:
+    path: /mentions
+    defaults: { _controller: VitrineBundle:Default:mentions }
+
+hello:
+    path: /hello/{visiteur}
+    defaults: { _controller: VitrineBundle:Default:hello }

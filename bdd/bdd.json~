@@ -1,0 +1,127 @@
+{
+	"categories" : [
+		{
+			"id" : 1,
+			"nom" : "Métiers insolites"
+		}, {
+			"id" : 2,
+			"nom" : "Métiers détente"
+		}, {
+			"id" : 3,
+			"nom" : "Métiers défouloir"
+		}, {
+			"id" : 4,
+			"nom" : "Métiers nature"
+		}, , {
+			"id" : 5,
+			"nom" : "Métiers populaires"
+		}],
+	"produits": { 
+		"selection" : "Métiers",
+		"elements" : [
+			{
+				"titre" : "Testeur de matelas",
+				"description" : "Vous rêvez d'un métier relax ? Le Testeur de matelas est LE métier qu'il vous faut ! Passez vos journées et vos nuits à tester des matelas de toutes tailles au moelleux incomparable !.",
+				"prix" : 120 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 2
+					} ]
+			}, {
+				"titre" : "Eleveur de pingouins en Alaska",
+				"description" : "Elever des pingouins est une bonne façon de préserver l'espère, non ? Tentez votre chance dès aujourd'hui et relevez le défi !",
+				"prix" : 160 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 1
+					}, {
+						"ref" : 4
+					} ]
+			}, {
+				"titre" : "Tagger",
+				"description" : "Etre payé pour regarder des films et séries TV, vous en avez révez nous l'avons en vente, juste pour vous !",
+				"prix" : 140 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 2
+					} ]
+			}, {
+				"titre" : "Client mystère",
+				"description" : "Faîtes vous passer pour un client ordinaire et observer les lieux pour mieux cafter sur la qualité des services proposés !",
+				"prix" : 90 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 3
+					}]
+			}, {
+				"titre" : "Vétérinaire",
+				"description" : "Vous aimez les animaux et vous voulez consacrer la plus grande partie de votre vie à ces petites bêtes : devenez vétérinaire !",
+				"prix" : 160 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 5
+					}]
+			}, {
+				"titre" : "Chirurgien esthétique",
+				"description" : "Rendre les gens beaux... ou moche ! Après tout à partir du moment où vous êtes payé c'est tout ce qui vous importe non ?",
+				"prix" : 180 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 5
+					}]
+			}, {
+				"titre" : "Manequin",
+				"description" : "Etre maigre comme un clou à vous en rendre malade et vous balader sur un podium dans des tenues toutes aussi originales les unes que les autres ça vous tente ? Alors foncez !",
+				"prix" : 160 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 5
+					}]
+			}, {
+				"titre" : "Testeur de jeux vidéo",
+				"description" : "Vous aimez les jeux vidéo ? Vous voulez passer votre vie devant votre console ou votre PC ? Faites Testeur de jeux vidéo et régalez vous !",
+				"prix" : 110 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 2
+					}, {
+						"ref" : 3
+					}]
+			}, {
+				"titre" : "Voyageur expérimenté",
+				"description" : "Voyager, découvrir le monde qui vous entoure sans vous soucier de quoi que ce soit, le rêve !",
+				"prix" : 75 000.00,
+				"stock" : 45,
+				"categories" : [ 
+					{
+						"ref" : 2
+					}, {
+						"ref" : 4
+					}]
+			}, {
+				"titre" : "Astronaute",
+				"description" : "Aller dans l'espace, c'est le rêve de beaucoup de personne, allez vous le réaliser ?",
+				"prix" : 350 000.00,
+				"stock" : 15,
+				"categories" : [ 
+					{
+						"ref" : 1
+					}, {
+						"ref" : 5
+					}]
+			}]
+		}
+
+
+
+
+
+}

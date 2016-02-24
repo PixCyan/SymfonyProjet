@@ -1,0 +1,10 @@
+vitrine:
+    resource: "@VitrineBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+_vitrine:
+    resource: "@VitrineBundle/Resources/config/routing.yml"
