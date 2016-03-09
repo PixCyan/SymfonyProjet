@@ -174,19 +174,6 @@ class Article
     }
 
     /**
-     * Set categories
-     *
-     * @param array $categories
-     * @return Article
-     */
-    public function setCategories($categories)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
      * Get categories
      *
      * @return array

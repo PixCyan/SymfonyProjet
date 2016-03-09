@@ -41,13 +41,13 @@ class Categorie
     /**
      * Ajoute/lie un article à la categorie
      */
-    public function addObjet(Article $article) {
+    public function addArticle(Article $article) {
         $this->articles[] = $article;
     }
     /**
      * Supprime un article de la categorie
      */
-    public function removeObjet(Article $article) {
+    public function removeArticle(Article $article) {
         $this->articles->removeElement($article);
     }
 

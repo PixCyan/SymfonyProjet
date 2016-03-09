@@ -2,4 +2,10 @@
 
 {% block content %}
     <h1> Catalogue </h1>
+    {% if produits is defined %}
+        {% for p in produits %}
+            <p> {{ p.libelle }} </p>
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}

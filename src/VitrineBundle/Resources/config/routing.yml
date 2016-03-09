@@ -1,6 +1,6 @@
 vitrine_homepage:
     path:     /accueil/{visiteur}
-    defaults: { _controller: VitrineBundle:Default:index }
+    defaults: { _controller: VitrineBundle:Default:index, name:Visiteur }
 
 mentions:
     path: /mentions
@@ -9,3 +9,7 @@ mentions:
 hello:
     path: /hello/{visiteur}
     defaults: { _controller: VitrineBundle:Default:hello }
+
+catalogue:
+    path: /catalogue/
+    defaults: { _controller: VitrineBundle:Default:catalogue }
