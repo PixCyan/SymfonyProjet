@@ -1,6 +1,15 @@
 <div class="menu">
     {% block menu %}
         <a class="btn" href="{{ path('vitrine_homepage', {'visiteur': "Tata"}) }}"> Accueil </a>
-        <a class="btn" href="{{ path('mentions') }}"> Mentions </a>
+        <ul>
+            <li> Categories
+                <ul>
+                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 1}) }}"> Métiers </a></li>
+                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 2}) }}"> Humeurs </a></li>
+                </ul>
+            </li>
+            <li><a class="btn" href="{{ path('catalogue') }}"> Catalogue </a></li>
+        </ul>
+
     {% endblock %}
 </div>

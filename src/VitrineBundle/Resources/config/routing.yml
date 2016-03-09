@@ -13,3 +13,7 @@ hello:
 catalogue:
     path: /catalogue/
     defaults: { _controller: VitrineBundle:Default:catalogue }
+
+articleByCat:
+    path: /catalogue/{idCategorie}
+    defaults: { _controller: VitrineBundle:Default:articleByCat }

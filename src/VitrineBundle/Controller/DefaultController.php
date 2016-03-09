@@ -24,15 +24,20 @@ class DefaultController extends Controller
 
     //Fonction de catalogue
     public function catalogueAction() {
-        //TODO catalogueAction
         $em = $this->getDoctrine()->getManager();
-        if($article = $em->getRepository(Article::class)->findOneById(0) != null) {
+        if($article = $em->getRepository(Article::class)->findOneById(1) == null) {
             $this->initBDD();
         }
         $produits = $em->getRepository(Article::class)->findAll();
-        return $this->render('VitrineBundle:Default:default:catalogue.html.twig', array('produits' => $produits));
+        return $this->render('VitrineBundle:Default:catalogue.html.twig', array('produits' => $produits));
     }
 
+    public function articleByCatAction($idCategorie) {
+        $em = $this->getDoctrine()->getManager();
+        $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
+        $produits = $cat->getArticles();
+        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat));
+    }
 
     private function initBDD() {
         $em = $this->getDoctrine()->getManager();

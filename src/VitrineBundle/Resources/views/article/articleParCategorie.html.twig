@@ -1,7 +1,7 @@
 {% extends "VitrineBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1> Catalogue </h1>
+    <h1> Categorie : {{ categorie.libelle }}</h1>
     {% if produits is defined %}
         <table>
             <tr><th> Article </th><th> Prix </th></tr>
@@ -12,5 +12,6 @@
     {% else %}
         <p> Aucun artciles disponible.</p>
     {% endif %}
+
 
 {% endblock %}
