@@ -56,14 +56,14 @@ class Client
     /**
      * Ajoute/lie une categorie à l'article
      */
-    public function addCategorie(Commande $commande) {
+    public function addCommande(Commande $commande) {
         $this->commandes[] = $commande;
     }
 
     /**
      * Supprime une categorie de l'article
      */
-    public function removeCategorie(Commande $commande) {
+    public function removeCommande(Commande $commande) {
         $this->commandes->removeElement($commande);
     }
 

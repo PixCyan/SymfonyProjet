@@ -5,6 +5,9 @@ namespace VitrineBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
+use VitrineBundle\Entity\Client;
+use VitrineBundle\Entity\Commande;
+use VitrineBundle\Entity\LigneDeCommande;
 
 class DefaultController extends Controller
 {
@@ -39,6 +42,13 @@ class DefaultController extends Controller
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat));
     }
 
+    public function showPaniertAction() {
+        $em = $this->getDoctrine()->getManager();
+        $cat = $em->getRepository(Panier::class)->findOneById();
+        $produits = $cat->getArticles();
+        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat));
+    }
+
     private function initBDD() {
         $em = $this->getDoctrine()->getManager();
 
@@ -65,6 +75,21 @@ class DefaultController extends Controller
         $art2->setPrix(120000);
         $art2->setStock(25);
         $em->persist($art2);
+
+
+        $commande = new Commande();
+        $ligneCommande = new LigneDeCommande();
+        $ligneCommande->setArtcile($art);
+        $ligneCommande->setQuantite(1);
+        $ligneCommande->setCommande($commande);
+        $commande->addLigneDeCommande($ligneCommande);
+
+
+        $client = new Client();
+        $client->setNom("Lemoine");
+        $client->setPrenom("Paul");
+        $client->setMail("paul@gmail.com");
+        $client->addCommande($commande);
 
         $em->flush();
     }

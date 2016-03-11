@@ -17,3 +17,7 @@ catalogue:
 articleByCat:
     path: /catalogue/{idCategorie}
     defaults: { _controller: VitrineBundle:Default:articleByCat }
+
+contenuPanier:
+    path: /panier/
+    defaults: { _controller: VitrineBundle:Default:showPanier }
