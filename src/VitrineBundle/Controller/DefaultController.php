@@ -6,8 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
-use VitrineBundle\Entity\Commande;
-use VitrineBundle\Entity\LigneDeCommande;
 
 class DefaultController extends Controller
 {
@@ -76,20 +74,10 @@ class DefaultController extends Controller
         $art2->setStock(25);
         $em->persist($art2);
 
-
-        $commande = new Commande();
-        $ligneCommande = new LigneDeCommande();
-        $ligneCommande->setArtcile($art);
-        $ligneCommande->setQuantite(1);
-        $ligneCommande->setCommande($commande);
-        $commande->addLigneDeCommande($ligneCommande);
-
-
         $client = new Client();
         $client->setNom("Lemoine");
         $client->setPrenom("Paul");
         $client->setMail("paul@gmail.com");
-        $client->addCommande($commande);
 
         $em->flush();
     }

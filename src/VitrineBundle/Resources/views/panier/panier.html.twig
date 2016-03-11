@@ -2,6 +2,9 @@
 
 {% block content %}
     <h1> Panier </h1>
+    {% for key, p in produits %}
+        <p>{{ key }} quantité : {{ p }}</p><br/>
 
+    {% endfor %}
 
 {% endblock %}

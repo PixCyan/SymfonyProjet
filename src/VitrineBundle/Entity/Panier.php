@@ -11,30 +11,39 @@ class Panier
 
 
     public function __construct() {
-        $this->contenu = new ArrayCollection();
+        $this->contenu = array();
     }
 
     /**
      * Ajoute/lie une categorie à l'article
      */
-    public function addContenu($ligneCommande) {
-        $this->contenu[] = $ligneCommande;
+    public function ajouterArticle($article, $quantite = 1) {
+        if($this->contenu[$article->getId()] != null) {
+            $c[$article->getId()] = $quantite;
+        }
     }
 
     /**
      * Supprime une categorie de l'article
      */
-    public function removeContenu($ligneCommande) {
-        $this->contenu->removeElement($ligneCommande);
+    public function supprimerArticle($article) {
+       //TODO supprimer
+        unset($this->contenu[$article->getId()]);
+        //$array = array_values($array);
     }
 
-    public function ajouterArticle() {
 
+    public function viderPanier() {
+        //TODO viderPanier
+        $this->contenu = array();
     }
 
-    public function supprimerArticle() {
-
+    /**
+     * @return array
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
     }
-
 
 }

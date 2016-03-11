@@ -20,4 +20,4 @@ articleByCat:
 
 contenuPanier:
     path: /panier/
-    defaults: { _controller: VitrineBundle:Default:showPanier }
+    defaults: { _controller: VitrineBundle:Panier:showPanier }
