@@ -5,37 +5,35 @@ namespace VitrineBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use VitrineBundle\Entity\Article;
-use VitrineBundle\Entity\Commande;
+use VitrineBundle\Entity\Panier;
 
-class DefaultController extends Controller {
+class PanierController extends Controller {
 
-    public function showPaniertAction(Request $request) {
+    public function showPanierAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
         $session = $request->getSession();
         $panier = $session->get('panier');
-        $contenuPanier = $panier->getConetnu();
-        $produit = array();
-        $i = 0;
-        foreach($contenuPanier as $key => $value) {
-            $article = $em->getRepository(Article::class)->findOneById($key);
-            if(!$article) {
-                $produit[$i] = $article;
-            }
-            $i++;
+        $contenuPanier = $panier->getContenu();
+
+        return $this->render('VitrineBundle:panier:panier.html.twig', array('produits' => $contenuPanier));
+    }
+
+    public function ajouterPanierAction(Request $request, $id, $quantite = 1) {
+        //TODO ajouterPanier
+        $session = $request->getSession();
+        if(!$session->get('panier')) {
+            $panier = new Panier();
+        } else {
+            $panier = $session->get('panier');
         }
-
-
-        return $this->render('VitrineBundle:panier:panier.html.twig', array());
+        $panier->ajouterArticle($id);
+        $session->set('panier', $panier);
+        return $this->forward('VitrineBundle:Panier:showPanier');
     }
 
-    public function ajouterPaniertAction(Request $request, $article, $quantite) {
+    public function supprimerPanierAction(Request $request, $article) {
         //TODO ajouterPanier
-        return $this->render('VitrineBundle:panier:panier.html.twig', array());
-    }
-
-    public function supprimerPaniertAction(Request $request, $article) {
-        //TODO ajouterPanier
-        return $this->render('VitrineBundle:panier:panier.html.twig', array());
+        return $this->forward('VitrineBundle:Panier:ajouterPanier');
     }
 
 }

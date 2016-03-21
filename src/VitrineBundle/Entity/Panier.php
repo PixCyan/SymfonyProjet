@@ -18,17 +18,22 @@ class Panier
      * Ajoute/lie une categorie à l'article
      */
     public function ajouterArticle($article, $quantite = 1) {
-        if($this->contenu[$article->getId()] != null) {
-            $c[$article->getId()] = $quantite;
+        if(empty($this->contenu[$article])) {
+            $this->contenu[$article] = $quantite;
+        } else {
+            $c = $this->getContenu();
+            $this->contenu[$article] = $c[$article]+1;
         }
     }
 
     /**
      * Supprime une categorie de l'article
      */
-    public function supprimerArticle($article) {
+    public function supprimerArticle($id) {
        //TODO supprimer
-        unset($this->contenu[$article->getId()]);
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository(Article::class)->findOneById($id);
+        unset($this->contenu[$article]);
         //$array = array_values($array);
     }
 

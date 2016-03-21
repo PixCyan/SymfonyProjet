@@ -21,3 +21,7 @@ articleByCat:
 contenuPanier:
     path: /panier/
     defaults: { _controller: VitrineBundle:Panier:showPanier }
+
+ajouterPanier:
+    path: /panier/ajouter/{id}
+    defaults: { _controller: VitrineBundle:Panier:ajouterPanier }
