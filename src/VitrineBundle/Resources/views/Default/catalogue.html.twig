@@ -6,7 +6,7 @@
         <table>
             <tr><th> Article </th><th> Prix </th></tr>
             {% for p in produits %}
-                <tr><td> {{ p.libelle }} </td><td> {{ p.prix }}</td></tr>
+                <tr><td> {{ p.libelle }} </td><td> {{ p.prix }}</td><td><a href="{{ path('ajouterPanier', {'id': p.id}) }} "> Ajouter au panier</a></td></tr>
             {% endfor %}
         </table>
     {% else %}

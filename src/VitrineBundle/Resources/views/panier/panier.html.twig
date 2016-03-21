@@ -2,9 +2,17 @@
 
 {% block content %}
     <h1> Panier </h1>
-    {% for key, p in produits %}
-        <p>{{ key }} quantité : {{ p }}</p><br/>
-
-    {% endfor %}
+    {% if produits is not empty %}
+        <table>
+        {% for key, produit in produits %}
+            {%  for p in produit %}
+            <tr><td>{{ p.libelle }} quantité : </td><td><a href="{{ path('ajouterPanier', {'id': article.id}) }} "> Ajouter au panier</a></td></tr>
+            {% endfor %}
+        {% endfor %}
+        </table>
+    {% else %}
+        <p> Aucun produit disponible dans votre panier.</p>
+    {% endif %}
 
 {% endblock %}
+

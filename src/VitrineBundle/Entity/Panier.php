@@ -22,19 +22,21 @@ class Panier
             $this->contenu[$article] = $quantite;
         } else {
             $c = $this->getContenu();
-            $this->contenu[$article] = $c[$article]+1;
+            $this->contenu[$article] += 1;
         }
     }
 
     /**
      * Supprime une categorie de l'article
      */
-    public function supprimerArticle($id) {
+    public function supprimerArticle($article) {
        //TODO supprimer
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository(Article::class)->findOneById($id);
-        unset($this->contenu[$article]);
-        //$array = array_values($array);
+        if($this->contenu[$article] > 1) {
+            $c = $this->getContenu();
+            $this->contenu[$article] -= 1;
+        } else {
+            unset($this->contenu[$article]);
+        }
     }
 
 

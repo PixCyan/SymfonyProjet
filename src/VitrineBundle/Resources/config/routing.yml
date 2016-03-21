@@ -25,3 +25,7 @@ contenuPanier:
 ajouterPanier:
     path: /panier/ajouter/{id}
     defaults: { _controller: VitrineBundle:Panier:ajouterPanier }
+
+supprimerPanier:
+    path: /panier/supprimer/{id}
+    defaults: { _controller: VitrineBundle:Panier:supprimerPanier }

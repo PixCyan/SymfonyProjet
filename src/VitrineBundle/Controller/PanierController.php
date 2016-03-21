@@ -14,8 +14,16 @@ class PanierController extends Controller {
         $session = $request->getSession();
         $panier = $session->get('panier');
         $contenuPanier = $panier->getContenu();
+        $panier = array();
+        $i = 0;
+        foreach($contenuPanier as $key => $produit) {
+            $em = $this->getDoctrine()->getManager();
+            $article = $em->getRepository(Article::class)->findOneById($key);
+            $panier[$i] = array('article' => $article, 'quantite' => $produit);
+            $i++;
+        }
 
-        return $this->render('VitrineBundle:panier:panier.html.twig', array('produits' => $contenuPanier));
+        return $this->render('VitrineBundle:panier:panier.html.twig', array('produits' => $panier));
     }
 
     public function ajouterPanierAction(Request $request, $id, $quantite = 1) {
@@ -31,9 +39,18 @@ class PanierController extends Controller {
         return $this->forward('VitrineBundle:Panier:showPanier');
     }
 
-    public function supprimerPanierAction(Request $request, $article) {
+    public function supprimerPanierAction(Request $request, $id) {
         //TODO ajouterPanier
-        return $this->forward('VitrineBundle:Panier:ajouterPanier');
+        $session = $request->getSession();
+        if(!$session->get('panier')) {
+            $panier = new Panier();
+        } else {
+            $panier = $session->get('panier');
+        }
+        $panier->supprimerArticle($id);
+        $session->set('panier', $panier);
+
+        return $this->forward('VitrineBundle:Panier:showPanier');
     }
 
 }
