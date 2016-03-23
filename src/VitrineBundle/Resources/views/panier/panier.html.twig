@@ -5,9 +5,7 @@
     {% if produits is not empty %}
         <table>
         {% for key, produit in produits %}
-            {%  for p in produit %}
-            <tr><td>{{ p.libelle }} quantité : </td><td><a href="{{ path('ajouterPanier', {'id': article.id}) }} "> Ajouter au panier</a></td></tr>
-            {% endfor %}
+            <tr><td>{{ produit.article.libelle }} quantité : </td><td><a href="{{ path('ajouterPanier', {'id': produit.quantite}) }} "> Ajouter au panier</a></td></tr>
         {% endfor %}
         </table>
     {% else %}
