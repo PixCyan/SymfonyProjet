@@ -37,7 +37,7 @@ class PanierController extends Controller {
         }
         $panier->ajouterArticle($id);
         $session->set('panier', $panier);
-        return $this->forward('VitrineBundle:Panier:showPanier');
+        return $this->redirectToRoute('contenuPanier');
     }
 
     public function supprimerPanierAction(Request $request, $id) {
@@ -51,7 +51,7 @@ class PanierController extends Controller {
         $panier->supprimerArticle($id);
         $session->set('panier', $panier);
 
-        return $this->forward('VitrineBundle:Panier:showPanier');
+        return $this->redirectToRoute('contenuPanier');
     }
 
 }
