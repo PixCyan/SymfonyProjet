@@ -44,6 +44,20 @@ class Client
     private $mail;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="motDePasse", type="string", length=255)
+     */
+    private $mdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ancienMotDePasse", type="string", length=255)
+     */
+    private $ancienMdp;
+
+    /**
      * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Commande", mappedBy="client")
      */
     private $commandes;
@@ -147,4 +161,45 @@ class Client
     {
         return $this->prenom;
     }
+
+    /**
+     * @return string
+     */
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
+    /**
+     * @param string $mdp
+     */
+    public function setMdp($mdp)
+    {
+        $this->mdp = $mdp;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAncienMdp()
+    {
+        return $this->ancienMdp;
+    }
+
+    /**
+     * @param string $ancienMdp
+     */
+    public function setAncienMdp($ancienMdp)
+    {
+        $this->ancienMdp = $ancienMdp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
+    }
+
 }

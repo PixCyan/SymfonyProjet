@@ -125,4 +125,24 @@ class ClientController extends Controller
             ->getForm()
         ;
     }
+
+
+    public function connexion(Request $request) {
+        $client = new Client();
+        $form = $this->createForm('VitrineBundle\Form\ConnexionType', $client);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            //TODO finir connexion
+            $client = $em->getRepository(Client::class)->findOneBy(array());
+
+            return $this->redirectToRoute('vitrine_homepage', array('id' => $client->getId()));
+        }
+
+        return $this->render('client/new.html.twig', array(
+            'client' => $client,
+            'form' => $form->createView(),
+        ));
+    }
 }

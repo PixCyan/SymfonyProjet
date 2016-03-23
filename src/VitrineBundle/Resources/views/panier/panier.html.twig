@@ -2,10 +2,10 @@
 
 {% block content %}
     <h1> Panier </h1>
-    {% if produits is not empty %}
+    {% if produits is defined and produits is not empty %}
         <table>
         {% for key, produit in produits %}
-            <tr><td>{{ produit.article.libelle }} quantité : </td><td><a href="{{ path('ajouterPanier', {'id': produit.quantite}) }} "> Ajouter au panier</a></td></tr>
+            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td><td><a href="{{ path('ajouterPanier', {'id': produit.quantite }) }} "> Ajouter au panier</a></td></tr>
         {% endfor %}
         </table>
     {% else %}

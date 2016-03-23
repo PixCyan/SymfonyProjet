@@ -9,6 +9,19 @@
                 </ul>
             </li>
             <li><a class="btn" href="{{ path('catalogue') }}"> Catalogue </a></li>
+            <li>Connexion
+                <ul>
+                    {% if user is not defined or user is empty %}
+                        <!-- Si non connecté -->
+                        <li><a href="#"> S'enregistrer </a></li>
+                        <li><a href="#"> Se connecter </a></li>
+                    {% else %}
+                        <!-- Si connecté-->
+                        <li><a href="#"> Mon profil </a></li>
+                        <li><a href="#"> Se déconnecter </a></li>
+                    {% endif %}
+                </ul>
+            </li>
         </ul>
 
     {% endblock %}

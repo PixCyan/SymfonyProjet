@@ -15,14 +15,15 @@ class PanierController extends Controller {
         $panier = $session->get('panier');
         $contenuPanier = $panier->getContenu();
         $panier = array();
-        $i = 0;
-        foreach($contenuPanier as $key => $produit) {
-            $em = $this->getDoctrine()->getManager();
-            $article = $em->getRepository(Article::class)->findOneById($key);
-            $panier[$i] = array('article' => $article, 'quantite' => $produit);
-            $i++;
+        if($contenuPanier) {
+            $i = 0;
+            foreach($contenuPanier as $key => $produit) {
+                $em = $this->getDoctrine()->getManager();
+                $article = $em->getRepository(Article::class)->findOneById($key);
+                $panier[$i] = array('article' => $article, 'quantite' => $produit);
+                $i++;
+            }
         }
-
         return $this->render('VitrineBundle:panier:panier.html.twig', array('produits' => $panier));
     }
 
