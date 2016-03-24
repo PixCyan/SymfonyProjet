@@ -5,12 +5,12 @@
     {% if produits is defined and produits is not empty %}
         <table>
         {% for key, produit in produits %}
-            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td><td><a href="{{ path('ajouterPanier', {'id': produit.article.id }) }} "> Ajouter au panier</a></td></tr>
+            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td>
+                <td><a href="{{ path('ajouterPanier', {'id': produit.article.id }) }} "> Ajouter au panier</a>
+                    <a href="{{ path('supprimerPanier', {'id': produit.article.id }) }} "> Retirer un produit</a></td></tr>
         {% endfor %}
         </table>
     {% else %}
-        <p> Aucun produit disponible dans votre panier.</p>
+        <p> Votre panier est vide.</p>
     {% endif %}
-
 {% endblock %}
-

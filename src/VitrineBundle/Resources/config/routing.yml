@@ -37,3 +37,8 @@ ajouterPanier:
 supprimerPanier:
     path: /panier/supprimer/{id}
     defaults: { _controller: VitrineBundle:Panier:supprimerPanier }
+
+connexion:
+    path: /connexion
+    defaults: { _controller: VitrineBundle:Client:connexion }
+    methods:  [GET, POST]

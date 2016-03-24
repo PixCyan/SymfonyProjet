@@ -3,13 +3,15 @@
 namespace VitrineBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
 
 class DefaultController extends Controller
 {
-    public function indexAction($visiteur) {
+    public function indexAction($visiteur, Request $request) {
+        $this->getUser();
         return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $visiteur));
     }
 

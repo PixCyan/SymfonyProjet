@@ -1,0 +1,16 @@
+{% extends "VitrineBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Connexion</h1>
+
+        {% for flash_message in app.session.flashbag.get('notice') %}
+            <div class="flash-notice">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        <div>
+            {{ form_widget(form) }}
+            <input type="submit" value="Se connecter" />
+        </div>
+
+{% endblock %}

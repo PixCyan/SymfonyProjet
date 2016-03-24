@@ -16,7 +16,7 @@ class ConnexionType extends AbstractType
     {
         $builder
             ->add('mail')
-            ->add('mdp');
+            ->add('mdp')
         ;
     }
 

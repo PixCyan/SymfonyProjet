@@ -51,6 +51,13 @@ class Client
     private $mdp;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="administrateur", type="boolean")
+     */
+    private $admin;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="ancienMotDePasse", type="string", length=255)
@@ -122,8 +129,7 @@ class Client
      * @param string $mail
      * @return Client
      */
-    public function setMail($mail)
-    {
+    public function setMail($mail) {
         $this->mail = $mail;
 
         return $this;
@@ -134,8 +140,7 @@ class Client
      *
      * @return string 
      */
-    public function getMail()
-    {
+    public function getMail() {
         return $this->mail;
     }
 
@@ -145,8 +150,7 @@ class Client
      * @param string $prenom
      * @return Client
      */
-    public function setPrenom($prenom)
-    {
+    public function setPrenom($prenom) {
         $this->prenom = $prenom;
 
         return $this;
@@ -200,6 +204,48 @@ class Client
     public function getCommandes()
     {
         return $this->commandes;
+    }
+
+    public function getUsername() {
+        return $this->mail; // l'email est utilisé comme login
+    }
+
+    public function getSalt() {
+        return null; // inutile avec l’encryptage choisi
+    }
+
+    public function getPassword() {
+        return $this->mdp;
+    }
+
+    public function isAdministrateur() {
+        if ($this->admin = true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getRoles() {
+        if ($this->isAdministrateur()) {
+            // Si le client est administrateur
+            return array('ROLE_ADMIN');
+        } else {
+            return array('ROLE_USER');
+        }
+    }
+
+    public function eraseCredentials(){
+        // rien à faire ici
+    }
+
+    public function serialize() {
+        // pour pouvoir sérialiser le Client en session
+        return serialize(array($this->id));
+    }
+
+    public function unserialize($serialized) {
+        list ($this->id) = unserialize($serialized);
     }
 
 }

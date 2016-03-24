@@ -126,8 +126,7 @@ class ClientController extends Controller
         ;
     }
 
-
-    public function connexion(Request $request) {
+    public function connexionAction(Request $request) {
         $client = new Client();
         $form = $this->createForm('VitrineBundle\Form\ConnexionType', $client);
         $form->handleRequest($request);
@@ -135,14 +134,30 @@ class ClientController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //TODO finir connexion
-            $client = $em->getRepository(Client::class)->findOneBy(array());
-
-            return $this->redirectToRoute('vitrine_homepage', array('id' => $client->getId()));
+            $client = $em->getRepository(Client::class)->findOneBy(array(
+                'mdp' => $form->get('mdp')->getData(),
+                'mail' => $form->get('mail')->getData()));
+            if($client) {
+                $session = $request->getSession();
+                $session->set('visiteur', $client);
+                return $this->redirectToRoute('vitrine_homepage', array('visiteur' => $client->getPrenom()));
+            } else {
+                $this->addFlash(
+                    'notice',
+                    'Mot de passe ou non d\'utilisateur incorrect.'
+                );
+            }
+            return $this->render('VitrineBundle:user:connexion.html.twig', array('form' => $form->createView()));
         }
 
         return $this->render('client/new.html.twig', array(
             'client' => $client,
             'form' => $form->createView(),
         ));
+    }
+
+    public function getVisiteur(Request $request) {
+        $session = $request->getSession();
+        return $session->get('visiteur');
     }
 }
