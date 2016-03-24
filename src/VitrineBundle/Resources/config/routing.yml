@@ -42,3 +42,11 @@ connexion:
     path: /connexion
     defaults: { _controller: VitrineBundle:Client:connexion }
     methods:  [GET, POST]
+
+passerCommande:
+    path: /passerCommande
+    defaults: { _controller: VitrineBundle:Commande:passerCommande }
+
+commandes:
+    path: /commandes
+    defaults: { _controller: VitrineBundle:Commande:showCommandes }

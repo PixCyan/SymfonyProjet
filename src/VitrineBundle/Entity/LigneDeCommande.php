@@ -29,14 +29,16 @@ class LigneDeCommande
     private $quantite;
 
     /**
+     * @ORM\ManyToOne(targetEntity="VitrineBundle\Entity\Article", inversedBy="lignesDeCommande")
+     */
+    private  $artcile;
+
+    /**
      * @ORM\ManyToOne(targetEntity="VitrineBundle\Entity\Commande", inversedBy="lignesDeCommande")
      */
     private $commande;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="VitrineBundle\Entity\Article", inversedBy="lignesDeCommande")
-     */
-    private  $artcile;
+
 
 
     //----------------- Getters & Setters ------------------------
@@ -86,7 +88,7 @@ class LigneDeCommande
     /**
      * @return mixed
      */
-    public function getArtcile()
+    public function getArticle()
     {
         return $this->artcile;
     }
@@ -94,7 +96,7 @@ class LigneDeCommande
     /**
      * @param mixed $artcile
      */
-    public function setArtcile($artcile)
+    public function setArticle($artcile)
     {
         $this->artcile = $artcile;
     }

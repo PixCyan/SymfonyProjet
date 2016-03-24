@@ -4,8 +4,10 @@ namespace VitrineBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use VitrineBundle\Entity\Article;
+use VitrineBundle\Entity\Client;
 use VitrineBundle\Entity\Commande;
+use VitrineBundle\Entity\LigneDeCommande;
 use VitrineBundle\Form\CommandeType;
 
 /**
@@ -124,5 +126,43 @@ class CommandeController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function passerCommandeAction(Request $request) {
+        //TODO passerCommande
+        $em = $this->getDoctrine()->getManager();
+        $session = $request->getSession();
+        $client = $em->getRepository(Client::class)->findOneById($session->get('client'));
+        $panier = $session->get('panier');
+        if($panier) {
+            $contenuPanier = $panier->getContenu();
+            if($contenuPanier) {
+                $commande = new Commande();
+                $i = 0;
+                foreach($contenuPanier as $key => $quantite) {
+                    $article = $em->getRepository(Article::class)->findOneById($key);
+                    $ligneCommande = new LigneDeCommande();
+                    $ligneCommande->setArticle($article);
+                    $ligneCommande->setQuantite($quantite);
+                    $ligneCommande->setCommande($commande);
+                    $commande->addLigneDeCommande($ligneCommande);
+                    $commande->setClient($client);
+                    $commande->setEtat(false);
+                    $client->addCommande($commande);
+
+                    $em->persist($commande);
+                    $em->persist($ligneCommande);
+                    $em->merge($client);
+
+                    $i++;
+                }
+                $em->flush();
+            }
+        }
+        return $this->render('VitrineBundle:user:commandesClient.html.twig', array('client' => $client));
+    }
+
+    public function showCommandesAction(Client $client) {
+        return $this->render('VitrineBundle:user:commandesClient.html.twig', array('client' => $client));
     }
 }
