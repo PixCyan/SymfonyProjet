@@ -11,7 +11,7 @@
             <li><a class="btn" href="{{ path('catalogue') }}"> Catalogue </a></li>
             <li>Connexion
                 <ul>
-                    {% if user is not defined or user is empty %}
+                    {% if visiteur is not defined or visiteur is empty %}
                         <!-- Si non connecté -->
                         <li><a href="#"> S'enregistrer </a></li>
                         <li><a href="#"> Se connecter </a></li>

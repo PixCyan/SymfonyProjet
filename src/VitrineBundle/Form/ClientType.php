@@ -18,7 +18,16 @@ class ClientType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('mail')
-
+            ->add('motDePasse', 'password')
+            ->add('confirmMdp', 'password', array('mapped' => false))
+            ->add('roles', 'choice', array('choices' =>
+                array(
+                    'ROLE_USER' => 'ROLE_USER',
+                    'ROLE_ADMIN' => 'ROLE_ADMIN',
+                ),
+                'required'  => true,
+                'multiple' => true
+            ))
         ;
     }
     

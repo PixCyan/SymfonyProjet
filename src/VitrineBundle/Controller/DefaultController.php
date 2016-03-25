@@ -10,9 +10,9 @@ use VitrineBundle\Entity\Client;
 
 class DefaultController extends Controller
 {
-    public function indexAction($visiteur, Request $request) {
-        $this->getUser();
-        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $visiteur));
+    public function indexAction(Request $request) {
+        $client = $this->getUser();
+        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client->getPrenom()));
     }
 
     //Fonction pour les mentions légales
@@ -22,31 +22,37 @@ class DefaultController extends Controller
 
     //Fonction de test
     public function helloAction($visiteur) {
+        //TODO supprimer helloAction
         return $this->render('default/hello.html.twig', array('visiteur' => $visiteur));
     }
 
     //Fonction de catalogue
     public function catalogueAction() {
+        $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         if($article = $em->getRepository(Article::class)->findOneById(1) == null) {
             $this->initBDD();
         }
         $produits = $em->getRepository(Article::class)->findAll();
-        return $this->render('VitrineBundle:Default:catalogue.html.twig', array('produits' => $produits));
+        return $this->render('VitrineBundle:Default:catalogue.html.twig', array('produits' => $produits, 'client' => $client->getPrenom()));
     }
 
     public function articleByCatAction($idCategorie) {
+        $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
         $produits = $cat->getArticles();
-        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat));
+        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
+            'client' => $client->getPrenom()));
     }
 
     public function showPaniertAction() {
+        $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $cat = $em->getRepository(Panier::class)->findOneById();
         $produits = $cat->getArticles();
-        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat));
+        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
+            'client' => $client->getPrenom()));
     }
 
     private function initBDD() {

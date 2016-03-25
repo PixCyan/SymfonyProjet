@@ -7,7 +7,7 @@ vitrine_commande:
     prefix:   /commande
 
 vitrine_homepage:
-    path:     /accueil/{visiteur}
+    path:     /accueil
     defaults: { _controller: VitrineBundle:Default:index, name:Visiteur }
 
 mentions:

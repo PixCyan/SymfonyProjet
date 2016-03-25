@@ -8,3 +8,13 @@ app:
 
 _vitrine:
     resource: "@VitrineBundle/Resources/config/routing.yml"
+
+login:
+    pattern: /login
+    defaults: { _controller: VitrineBundle:Security:login }
+
+login_check:
+    pattern: /login_check
+
+logout:
+    pattern: /logout

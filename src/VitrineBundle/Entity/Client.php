@@ -4,6 +4,7 @@ namespace VitrineBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Client
@@ -11,8 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="VitrineBundle\Repository\ClientRepository")
  */
-class Client
-{
+class Client implements UserInterface, \Serializable {
     /**
      * @var int
      *
@@ -48,30 +48,31 @@ class Client
      *
      * @ORM\Column(name="motDePasse", type="string", length=255)
      */
-    private $mdp;
+    private $motDePasse;
 
     /**
-     * @var boolean
+     * @var array
      *
-     * @ORM\Column(name="administrateur", type="boolean")
+     * @ORM\Column(name="roles", type="array", nullable=true)
      */
-    private $admin;
+    private $roles;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ancienMotDePasse", type="string", length=255)
+     * @ORM\Column(name="ancienMotDePasse", type="string", length=255, nullable=true)
      */
     private $ancienMdp;
 
     /**
-     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Commande", mappedBy="client")
+     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Commande", mappedBy="client", cascade={"remove"})
      */
     private $commandes;
 
 
     public function __construct() {
         $this->commandes = new ArrayCollection();
+        $this->roles = array();
     }
 
     /**
@@ -169,17 +170,17 @@ class Client
     /**
      * @return string
      */
-    public function getMdp()
+    public function getMotDePasse()
     {
-        return $this->mdp;
+        return $this->motDePasse;
     }
 
     /**
      * @param string $mdp
      */
-    public function setMdp($mdp)
+    public function setMotDePasse($mdp)
     {
-        $this->mdp = $mdp;
+        $this->motDePasse = $mdp;
     }
 
     /**
@@ -206,6 +207,8 @@ class Client
         return $this->commandes;
     }
 
+
+    //Function sécurité/login
     public function getUsername() {
         return $this->mail; // l'email est utilisé comme login
     }
@@ -215,15 +218,7 @@ class Client
     }
 
     public function getPassword() {
-        return $this->mdp;
-    }
-
-    public function isAdministrateur() {
-        if ($this->admin = true) {
-            return true;
-        } else {
-            return false;
-        }
+        return $this->motDePasse;
     }
 
     public function getRoles() {
@@ -234,6 +229,25 @@ class Client
             return array('ROLE_USER');
         }
     }
+
+    public function addRole($role)
+    {
+        if (!in_array($role, $this->roles, true)) {
+            $this->roles[] = $role;
+        }
+
+        return $this;
+    }
+
+    public function removeRole($role)
+    {
+        if (in_array($role, $this->roles, true)) {
+            unset($this->roles[$role]);
+        }
+
+        return $this;
+    }
+
 
     public function eraseCredentials(){
         // rien à faire ici
@@ -246,6 +260,10 @@ class Client
 
     public function unserialize($serialized) {
         list ($this->id) = unserialize($serialized);
+    }
+
+    public function isAdministrateur() {
+        //TODO isAdministrateur
     }
 
 }

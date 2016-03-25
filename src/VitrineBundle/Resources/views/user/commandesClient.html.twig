@@ -1,7 +1,7 @@
 {% extends "VitrineBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>Commandes du client :: {{ client.nom }} {{ client.prenom }}</h1>
+    <h1>Commandes du client : {{ client.nom }} {{ client.prenom }}</h1>
     {% for flash_message in app.session.flashbag.get('notice') %}
         <div class="flash-notice">
             {{ flash_message }}
@@ -20,6 +20,4 @@
             </table>
         {% endfor %}
     {% endif %}
-
-
 {% endblock %}

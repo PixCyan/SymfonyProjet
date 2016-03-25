@@ -119,8 +119,7 @@ class CommandeController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Commande $commande)
-    {
+    private function createDeleteForm(Commande $commande) {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('commande_delete', array('id' => $commande->getId())))
             ->setMethod('DELETE')
@@ -132,6 +131,7 @@ class CommandeController extends Controller
         //TODO passerCommande
         $em = $this->getDoctrine()->getManager();
         $session = $request->getSession();
+        //TODO getUser() client passer commande
         $client = $em->getRepository(Client::class)->findOneById($session->get('client'));
         $panier = $session->get('panier');
         if($panier) {
@@ -159,10 +159,11 @@ class CommandeController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('VitrineBundle:user:commandesClient.html.twig', array('client' => $client));
+        return $this->redirectToRoute('commandes');
     }
 
-    public function showCommandesAction(Client $client) {
+    public function showCommandesAction() {
+        $client = $this->getUser();
         return $this->render('VitrineBundle:user:commandesClient.html.twig', array('client' => $client));
     }
 }
