@@ -12,7 +12,7 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request) {
         $client = $this->getUser();
-        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client->getPrenom()));
+        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client));
     }
 
     //Fonction pour les mentions légales

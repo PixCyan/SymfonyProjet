@@ -128,11 +128,11 @@ class CommandeController extends Controller
     }
 
     public function passerCommandeAction(Request $request) {
-        //TODO passerCommande
+        //TODO passerCommande découper en deux méthodes
         $em = $this->getDoctrine()->getManager();
         $session = $request->getSession();
         //TODO getUser() client passer commande
-        $client = $em->getRepository(Client::class)->findOneById($session->get('client'));
+        $client = $em->getRepository(Client::class)->findOneById($this->getUser());
         $panier = $session->get('panier');
         if($panier) {
             $contenuPanier = $panier->getContenu();
