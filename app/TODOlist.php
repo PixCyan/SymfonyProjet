@@ -8,6 +8,8 @@
 
 //TODO liste de produits
 //TODO transition passerCommande => valider la commande => showCommandes
+//TODO profil client connecté
+//TODO méthode getPanier
 //TODO mettre en place le CSS
 //TODO Correction editClient => encrypter le mdp
         //+ confirmation de mdp

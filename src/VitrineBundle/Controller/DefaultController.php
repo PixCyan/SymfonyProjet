@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
+use VitrineBundle\Entity\Panier;
 
 class DefaultController extends Controller
 {
@@ -27,14 +28,32 @@ class DefaultController extends Controller
     }
 
     //Fonction de catalogue
-    public function catalogueAction() {
+    public function catalogueAction(Request $request) {
         $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         if($article = $em->getRepository(Article::class)->findOneById(1) == null) {
             $this->initBDD();
         }
         $produits = $em->getRepository(Article::class)->findAll();
-        return $this->render('VitrineBundle:Default:catalogue.html.twig', array('produits' => $produits, 'client' => $client->getPrenom()));
+        $session = $request->getSession();
+        $panier = $session->get('panier');
+        if($panier) {
+            $contenuPanier = $panier->getContenu();
+            $panier = array();
+            if($contenuPanier) {
+                $i = 0;
+                foreach($contenuPanier as $key => $produit) {
+                    $em = $this->getDoctrine()->getManager();
+                    $article = $em->getRepository(Article::class)->findOneById($key);
+                    $panier[$i] = array('article' => $article, 'quantite' => $produit);
+                    $i++;
+                }
+            }
+        }
+        return $this->render('VitrineBundle:Default:catalogue.html.twig', array(
+            'produits' => $produits,
+            'client' => $client,
+            'panier' => $panier));
     }
 
     public function articleByCatAction($idCategorie) {

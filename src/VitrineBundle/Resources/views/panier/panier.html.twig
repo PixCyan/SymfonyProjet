@@ -1,19 +1,4 @@
 {% extends "VitrineBundle::layout.html.twig" %}
-
 {% block content %}
-    <h1> Panier </h1>
-    {% if produits is defined and produits is not empty %}
-        <table>
-        {% for key, produit in produits %}
-            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td>
-                <td><a href="{{ path('ajouterPanier', {'id': produit.article.id }) }} "> Ajouter une quantité</a>
-                    <a href="{{ path('supprimerPanier', {'id': produit.article.id }) }} "> Retirer un produit</a></td></tr>
-        {% endfor %}
-        </table>
-        {% if produits|length >= 1 %}
-            <p><a href="{{ path('passerCommande') }}"> Passer commande </a></p>
-        {% endif %}
-    {% else %}
-        <p> Votre panier est vide.</p>
-    {% endif %}
+    {% include 'VitrineBundle:panier:contenuPanier.html.twig' %}
 {% endblock %}

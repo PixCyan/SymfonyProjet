@@ -27,7 +27,7 @@ class PanierController extends Controller {
             }
         }
         $session->set('client', 1);
-        return $this->render('VitrineBundle:panier:panier.html.twig', array('produits' => $panier));
+        return $this->render('VitrineBundle:panier:panier.html.twig', array('panier' => $panier));
     }
 
     public function ajouterPanierAction(Request $request, $id, $quantite = 1) {
@@ -39,7 +39,7 @@ class PanierController extends Controller {
         }
         $panier->ajouterArticle($id);
         $session->set('panier', $panier);
-        return $this->redirectToRoute('contenuPanier');
+        return $this->redirectToRoute('catalogue');
     }
 
     public function supprimerPanierAction(Request $request, $id) {
@@ -52,7 +52,7 @@ class PanierController extends Controller {
         $panier->supprimerArticle($id);
         $session->set('panier', $panier);
 
-        return $this->redirectToRoute('contenuPanier');
+        return $this->redirectToRoute('catalogue');
     }
 
 }

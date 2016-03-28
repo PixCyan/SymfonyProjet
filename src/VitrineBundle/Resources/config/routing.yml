@@ -44,7 +44,7 @@ connexion:
     methods:  [GET, POST]
 
 passerCommande:
-    path: /passerCommande
+    path: /commande/passerCommande
     defaults: { _controller: VitrineBundle:Commande:passerCommande }
 
 commandes:

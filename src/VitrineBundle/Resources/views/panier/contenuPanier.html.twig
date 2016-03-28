@@ -1,0 +1,17 @@
+{% block panier %}
+    <h1> Panier </h1>
+    {% if panier is defined and panier is not empty %}
+        <table>
+        {% for key, produit in panier %}
+            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td>
+                <td><a href="{{ path('ajouterPanier', {'id': produit.article.id }) }} "> Ajouter une quantité</a>
+                    <a href="{{ path('supprimerPanier', {'id': produit.article.id }) }} "> Retirer un produit</a></td></tr>
+        {% endfor %}
+        </table>
+        {% if panier|length >= 1 %}
+            <p><a href="{{ path('passerCommande') }}"> Passer commande </a></p>
+        {% endif %}
+    {% else %}
+        <p> Votre panier est vide.</p>
+    {% endif %}
+{% endblock %}

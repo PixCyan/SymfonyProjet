@@ -4,7 +4,7 @@ client_index:
     methods:  GET
 
 client_show:
-    path:     /{id}/show
+    path:     show/{id}
     defaults: { _controller: "VitrineBundle:Client:show" }
     methods:  GET
 
@@ -14,11 +14,11 @@ client_new:
     methods:  [GET, POST]
 
 client_edit:
-    path:     /{id}/edit
+    path:     /edit/{id}
     defaults: { _controller: "VitrineBundle:Client:edit" }
     methods:  [GET, POST]
 
 client_delete:
-    path:     /{id}/delete
+    path:     delete/{id}
     defaults: { _controller: "VitrineBundle:Client:delete" }
     methods:  DELETE

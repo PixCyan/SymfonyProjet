@@ -13,6 +13,13 @@
             {% endblock %}
         </div>
 
+
+        <div class="panier">
+            {% block panier %}
+                {% include "VitrineBundle:panier:contenuPanier.html.twig"%}
+            {% endblock %}
+        </div>
+
         {% include "VitrineBundle::footer.html.twig" %}
     {% endblock %}
 </html>
