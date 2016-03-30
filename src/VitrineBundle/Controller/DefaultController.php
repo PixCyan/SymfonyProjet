@@ -71,7 +71,7 @@ class DefaultController extends Controller
         $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
         $produits = $cat->getArticles();
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
-            'client' => $client->getPrenom()));
+            'client' => $client));
     }
 
     public function showPaniertAction() {
@@ -80,7 +80,7 @@ class DefaultController extends Controller
         $cat = $em->getRepository(Panier::class)->findOneById();
         $produits = $cat->getArticles();
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
-            'client' => $client->getPrenom()));
+            'client' => $client));
     }
 
     private function initBDD() {

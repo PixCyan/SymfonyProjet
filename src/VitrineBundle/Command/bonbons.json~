@@ -84,5 +84,243 @@
 			"id" : 21,
 			"nom" : "Thermos",
 			"ordre" : "Secondaire"
-		} ]
+		} ],
+	"articles" : [
+		{
+			"titre" : "Marshmallows - Fraise",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis à la fraise",
+			"prix" : 1.25,
+			"stock" : 45,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsFraise.jpg" }, 
+				{
+					"url": "marshmallowsFraise2.jpg"
+				}]
+		}, {
+			"titre" : "Marshmallows - Myrtille",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis à la myrtille.",
+			"prix" : 1.25,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsMyrtille.jpg" }, 
+				{
+					"url": "marshmallowsMyrtille2.jpg" 
+				}]
+		},  {
+			"titre" : "Marshmallows - Thé vert",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis de thé vert.",
+			"prix" : 1.25,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsTheVert.jpg" }, 
+				{
+					"url": "marshmallowsTheVert2.jpg" 
+				}]
+		}, {
+			"titre" : "Marshmallows - Calpis",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis goût Calpis.",
+			"prix" : 1.25,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsCalpis.jpg" }, 
+				{
+					"url": "marshmallowsCalpis2.jpg"
+				}]
+		},
+
+		 {
+			"titre" : "Caramels à la prune",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 8 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "caramelsALaPrune.png" }
+			]
+		}, {
+			"titre" : "Caramels aux haricots rouges",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 8 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "caramelsAuLait.jpg" }
+			]
+		}, {
+			"titre" : "Caramels au lait",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 8 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "caramelsAuxHaricotsRouges.webp" }
+			]
+		},  {
+			"titre" : "Happy Nikukyu - Pomme",
+			"description" : "Bonbons légers ultra-kawaii en forme de pattes de chats à la pomme avec une base goût yaourt.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuPomme.jpg" }
+			]
+		}, {
+			"titre" : "Happy Nikukyu - Raisin",
+			"description" : "Bonbons légers en forme de pattes de chats au goût raisin.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuRaisin.webp" }
+			]
+		}, {
+			"titre" : "Happy Nikukyu - Pêche",
+			"description" : "Bonbons légers en forme de pattes de chats au goût pêche.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuPeche.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Citron",
+			"description" : "Puchitto citron et miel ! Toujours aussi amusants et avec un bon goût de fruit.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoCitron.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Soda",
+			"description" : "Puchitto soda.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoSoda.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Chocolat",
+			"description" : "Bonbons Puchitto au chocolat. Deux goûts: chocolat et chocolat au lait.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoChocolat.jpg" }
+			]
+		}, {
+			"titre" : "Hi-Chew - Fraise",
+			"description" : "12 bonbons fruités rafraîchissants à mâcher, vendus au Japon depuis 1975.",
+			"prix" : 1.03,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 11 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "hiChewFraise.webp" }
+			]
+		}, {
+			"titre" : "Hi-Chew - Ecorce d'orange",
+			"description" : "12 bonbons fruités rafraîchissants à mâcher, vendus au Japon depuis 1975. ",
+			"prix" : 1.03,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 11 },
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "hiChewEcorceDorange.png" }
+			]
+		},
+	]
 }

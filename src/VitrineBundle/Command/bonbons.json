@@ -163,7 +163,7 @@
 			"stock" : 20,
 			"categories" : [ 
 				{
-					"ref" : 7 }, 
+					"ref" : 8 }, 
 				{
 					"ref": 1 
 				}],
@@ -178,7 +178,7 @@
 			"stock" : 20,
 			"categories" : [ 
 				{
-					"ref" : 7 }, 
+					"ref" : 8 }, 
 				{
 					"ref": 1 
 				}],
@@ -193,13 +193,133 @@
 			"stock" : 20,
 			"categories" : [ 
 				{
-					"ref" : 7 }, 
+					"ref" : 8 }, 
 				{
 					"ref": 1 
 				}],
 			"images" : [
 				{
 					"url" : "caramelsAuxHaricotsRouges.webp" }
+			]
+		},  {
+			"titre" : "Happy Nikukyu - Pomme",
+			"description" : "Bonbons légers ultra-kawaii en forme de pattes de chats à la pomme avec une base goût yaourt.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuPomme.jpg" }
+			]
+		}, {
+			"titre" : "Happy Nikukyu - Raisin",
+			"description" : "Bonbons légers en forme de pattes de chats au goût raisin.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuRaisin.webp" }
+			]
+		}, {
+			"titre" : "Happy Nikukyu - Pêche",
+			"description" : "Bonbons légers en forme de pattes de chats au goût pêche.",
+			"prix" : 0.99,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 9 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "happyNikukyuPeche.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Citron",
+			"description" : "Puchitto citron et miel ! Toujours aussi amusants et avec un bon goût de fruit.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoCitron.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Soda",
+			"description" : "Puchitto soda.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoSoda.jpg" }
+			]
+		}, {
+			"titre" : "Puchitto Chocolat",
+			"description" : "Bonbons Puchitto au chocolat. Deux goûts: chocolat et chocolat au lait.",
+			"prix" : 1.12,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 10 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "puchittoChocolat.jpg" }
+			]
+		}, {
+			"titre" : "Hi-Chew - Fraise",
+			"description" : "12 bonbons fruités rafraîchissants à mâcher, vendus au Japon depuis 1975.",
+			"prix" : 1.03,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 11 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "hiChewFraise.webp" }
+			]
+		}, {
+			"titre" : "Hi-Chew - Ecorce d'orange",
+			"description" : "12 bonbons fruités rafraîchissants à mâcher, vendus au Japon depuis 1975. ",
+			"prix" : 1.03,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 11 },
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "hiChewEcorceDorange.png" }
 			]
 		}
 	]

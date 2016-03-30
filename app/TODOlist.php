@@ -10,6 +10,7 @@
 //TODO transition passerCommande => valider la commande => showCommandes
 //TODO profil client connecté
 //TODO méthode getPanier
+//TODO vider le panier
 //TODO mettre en place le CSS
 //TODO Correction editClient => encrypter le mdp
         //+ confirmation de mdp
