@@ -30,7 +30,7 @@
 					} ]
 			}, {
 				"titre" : "Eleveur de pingouins en Alaska",
-				"description" : "Elever des pingouins est une bonne façon de préserver l'espère, non ? Tentez votre chance dès aujourd'hui et relevez le défi !",
+				"description" : "Elever des pingouins est une bonne façon de préserver l'espèce, non ? Tentez votre chance dès aujourd'hui et relevez le défi !",
 				"prix" : 160 000.00,
 				"stock" : 45,
 				"categories" : [ 

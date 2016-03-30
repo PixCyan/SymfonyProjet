@@ -1,0 +1,206 @@
+{
+	"categories" : [
+		{
+			"id" : 1,
+			"nom" : "Bonbons",
+			"ordre" : "Principal"
+		}, {
+			"id" : 2,
+			"nom" : "Chocolats",
+			"ordre" : "Principal"
+		}, {
+			"id" : 3,
+			"nom" : "Snacks",
+			"ordre" : "Principal"
+		}, {
+			"id" : 4,
+			"nom" : "Boissons",
+			"ordre" : "Principal"
+		}, {
+			"id" : 5,
+			"nom" : "Nouilles",
+			"ordre" : "Principal"
+		}, {
+			"id" : 6,
+			"nom" : "Bento",
+			"ordre" : "Principal"
+		}, {
+			"id" : 7,
+			"nom" : "Marshmallows",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 8,
+			"nom" : "Caramels",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 9,
+			"nom" : "Happy Nikukyu",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 10,
+			"nom" : "Pucchito",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 11,
+			"nom" : "Hi-Chew",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 12,
+			"nom" : "Koala no Machi",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 13,
+			"nom" : "Pocky",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 14,
+			"nom" : "Cookies",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 15,
+			"nom" : "Caramel Corn",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 16,
+			"nom" : "Snacks Tohato",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 17,
+			"nom" : "Jagarico",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 18,
+			"nom" : "Umaibo",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 19,
+			"nom" : "Boîtes à bento",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 20,
+			"nom" : "Baguettes",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 21,
+			"nom" : "Thermos",
+			"ordre" : "Secondaire"
+		} ],
+	"articles" : [
+		{
+			"titre" : "Marshmallows - Fraise",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis à la fraise",
+			"prix" : 1.25,
+			"stock" : 45,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsFraise.jpg" }, 
+				{
+					"url": "marshmallowsFraise2.jpg"
+				}]
+		}, {
+			"titre" : "Marshmallows - Myrtille",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis à la myrtille.",
+			"prix" : 1.25,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsMyrtille.jpg" }, 
+				{
+					"url": "marshmallowsMyrtille2.jpg" 
+				}]
+		},  {
+			"titre" : "Marshmallows - Thé vert",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis de thé vert.",
+			"prix" : 1.25,
+			"stock" : 30,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsTheVert.jpg" }, 
+				{
+					"url": "marshmallowsTheVert2.jpg" 
+				}]
+		}, {
+			"titre" : "Marshmallows - Calpis",
+			"description" : "Délicieux marshmallows au coeur fondant de coulis goût Calpis.",
+			"prix" : 1.25,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "marshmallowsCalpis.jpg" }, 
+				{
+					"url": "marshmallowsCalpis2.jpg"
+				}]
+		},
+
+		 {
+			"titre" : "Caramels à la prune",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "caramelsALaPrune.png" }
+			]
+		}, {
+			"titre" : "Caramels aux haricots rouges",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [ 
+				{
+					"url" : "caramelsAuLait.jpg" }
+			]
+		}, {
+			"titre" : "Caramels au lait",
+			"description" : "Les caramels Morinaga sont très populaires et vendus au Japon depuis 1913. Boîte de 12.",
+			"prix" : 1.03,
+			"stock" : 20,
+			"categories" : [ 
+				{
+					"ref" : 7 }, 
+				{
+					"ref": 1 
+				}],
+			"images" : [
+				{
+					"url" : "caramelsAuxHaricotsRouges.webp" }
+			]
+		}
+	]
+}

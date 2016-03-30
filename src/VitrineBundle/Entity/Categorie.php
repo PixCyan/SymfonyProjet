@@ -31,6 +31,14 @@ class Categorie
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="ordre", type="string", length=255)
+     */
+    private $ordre;
+
+
+    /**
      * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\Article", mappedBy="categories", cascade={"persist"})
      */
     private $articles;
@@ -94,4 +102,21 @@ class Categorie
     {
         return $this->articles;
     }
+
+    /**
+     * @return string
+     */
+    public function getOrdre()
+    {
+        return $this->ordre;
+    }
+
+    /**
+     * @param string $ordre
+     */
+    public function setOrdre($ordre)
+    {
+        $this->ordre = $ordre;
+    }
+
 }

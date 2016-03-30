@@ -3,7 +3,10 @@
 namespace VitrineBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\HttpFoundation\Request;
+use VitrineBundle\Command\RemplirBDDCommand;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
@@ -32,7 +35,13 @@ class DefaultController extends Controller
         $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         if($article = $em->getRepository(Article::class)->findOneById(1) == null) {
-            $this->initBDD();
+            //$this->initBDD();
+            //TODO traitement des données
+            $command = new RemplirBDDCommand();
+            $command->setContainer($this->container);
+            $input = new ArrayInput(array('some-param' => 10, '--some-option' => true));
+            $output = new NullOutput();
+            $resultCode = $command->run($input, $output);
         }
         $produits = $em->getRepository(Article::class)->findAll();
         $session = $request->getSession();

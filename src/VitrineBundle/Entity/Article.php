@@ -25,7 +25,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
+     * @ORM\Column(name="libelle", type="string", length=255, unique=true)
      */
     private $libelle;
 
@@ -42,6 +42,20 @@ class Article
      * @ORM\Column(name="stock", type="integer")
      */
     private $stock;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
 
     /**
      * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\Categorie", inversedBy="articles", cascade={"persist"})
@@ -189,6 +203,38 @@ class Article
     public function getLignesDeCommande()
     {
         return $this->lignesDeCommande;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
 }

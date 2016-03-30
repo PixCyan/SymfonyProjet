@@ -1,0 +1,88 @@
+{
+	"categories" : [
+		{
+			"id" : 1,
+			"nom" : "Bonbons",
+			"ordre" : "Principal"
+		}, {
+			"id" : 2,
+			"nom" : "Chocolats",
+			"ordre" : "Principal"
+		}, {
+			"id" : 3,
+			"nom" : "Snacks",
+			"ordre" : "Principal"
+		}, {
+			"id" : 4,
+			"nom" : "Boissons",
+			"ordre" : "Principal"
+		}, {
+			"id" : 5,
+			"nom" : "Nouilles",
+			"ordre" : "Principal"
+		}, {
+			"id" : 6,
+			"nom" : "Bento",
+			"ordre" : "Principal"
+		}, {
+			"id" : 7,
+			"nom" : "Marshmallows",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 8,
+			"nom" : "Caramels",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 9,
+			"nom" : "Happy Nikukyu",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 10,
+			"nom" : "Pucchito",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 11,
+			"nom" : "Hi-Chew",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 12,
+			"nom" : "Koala no Machi",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 13,
+			"nom" : "Pocky",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 14,
+			"nom" : "Cookies",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 15,
+			"nom" : "Caramel Corn",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 16,
+			"nom" : "Snacks Tohato",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 17,
+			"nom" : "Jagarico",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 18,
+			"nom" : "Umaibo",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 19,
+			"nom" : "Boîtes à bento",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 20,
+			"nom" : "Baguettes",
+			"ordre" : "Secondaire"
+		}, {
+			"id" : 21,
+			"nom" : "Thermos",
+			"ordre" : "Secondaire"
+		} ]
+}
