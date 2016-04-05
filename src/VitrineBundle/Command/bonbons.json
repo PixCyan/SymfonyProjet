@@ -321,6 +321,267 @@
 				{
 					"url" : "hiChewEcorceDorange.png" }
 			]
+		}, {
+			"titre" : "Koala no machi - Pouding",
+			"description" : "Adorables petits biscuits fourrés extrêmement célèbres au Japon. Edition limitée au pouding à la cràme anglaise. ",
+			"prix" : 1.20,
+			"stock" : 15,
+			"categories" : [ 
+				{
+					"ref" : 12 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "koalaNoMachiPouding.jpg" }
+			]
+		}, {
+			"titre" : "Koala no machi - Chocolat",
+			"description" : "Adorables petits biscuits fourrés extrêmement célèbres au Japon.",
+			"prix" : 1.20,
+			"stock" : 15,
+			"categories" : [ 
+				{
+					"ref" : 12 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "koalaNoMachiChocolat.jpg" }
+			]
+		}, {
+			"titre" : "Koala no machi - Fraise et lait",
+			"description" : "Adorables petits biscuits fourrés extrêmement célèbres au Japon.",
+			"prix" : 1.20,
+			"stock" : 15,
+			"categories" : [ 
+				{
+					"ref" : 12 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "koalaNoMachiFraiseEtLait.jpg" }
+			]
+		}, {
+			"titre" : "Pocky - Lait",
+			"description" : "Pocky au lait très légèrement sucrés sans colorant ni arôme ajouté.",
+			"prix" : 1.03,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 13 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "pockyLait.jpg" }, 
+				{
+					"url": "pockyLait2.png" 
+				}
+			]
+		}, {
+			"titre" : "Pocky - Melon",
+			"description" : "Pocky géants édition limitée régionale. Ces Pocky ne sont vendus qu'en quantité limitée sur l'île d'Hokkaido dans le nord du Japon. Chacun des 15 bâtonnets de la boîte est 50% plus grand qu'un pocky classique et présenté dans un emballage individuel. Produit difficile à restocker.",
+			"prix" : 11.20,
+			"stock" : 15,
+			"categories" : [ 
+				{
+					"ref" : 13 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "pockyMelon.png" }
+			]
+		}, {
+			"titre" : "Pocky - Panda Cookie et crème",
+			"description" : "Les Pocky les plus adorables au goût cookie et crème. ",
+			"prix" : 1.29,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 13 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "pockyPanda.jpg" }
+			]
+		}, {
+			"titre" : "Pocky - Thé vert",
+			"description" : "Retour des Pocky au chocolat au thé vert sur un biscuit au thé vert.",
+			"prix" : 1.29,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 13 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "pockyTheVert.jpg" },
+				{ "url" : "pockyTheVert2.jpg" }
+			]
+		}, {
+			"titre" : "Pocky - Extra fins",
+			"description" : "Pocky extra fins au chocolat au lait. 50 bâtonnets divisés en deux sachets.",
+			"prix" : 1.29,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 13 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "pockyExtraFins.jpg" }
+			]
+		}, {
+			"titre" : "Cookies - Melon Pan",
+			"description" : "Découvrez le melon pan japonais, un pain brioché sucré et moelleux très populaire au Japon.",
+			"prix" : 1.29,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 14 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "melonPan.webp" }
+			]
+		}, {
+			"titre" : "Melon Pan Cookies",
+			"description" : "Paquet de 22 melon pan cookies présentés sous emballage individuel fraîcheur. 11 biscuits à la crème de melon et 11 biscuits nature.",
+			"prix" : 3.29,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 14 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "melonPanCookies.webp" }
+			]
+		}, {
+			"titre" : "Choco Pie",
+			"description" : "Souvent imités mais jamais égalés, les fameux biscuits recouverts de chocolat au lait et fourrés de crème à la vanille de Lotte. Nées en Corée les Choco Pie sont devenues l'une des sucreries favorites des Japonais depuis bien longtemps. Boîte de 6 portions emballées individuellement.",
+			"prix" : 2.36,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 14 },
+				{
+					"ref": 2 
+				}],
+			"images" : [
+				{
+					"url" : "chocoPie.png" },
+				{ "url" : "chocoPie2.jpg"}
+			]
+		}, {
+			"titre" : "Caramel Corn - Chocolat",
+			"description" : "Les Caramel Corn sont un snack très populaire au Japon. Nouvelle édition au chocolat au lait.",
+			"prix" : 1.16,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 15 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "caramelCornChocolat.jpg" },
+				{ "url" : "caramelCorn2.png"}
+			]
+		}, {
+			"titre" : "Caramel Corn - Kinako",
+			"description" : "Les Caramel Corn sont un snack très populaire au Japon. Nouveau parfum typiquement japonais : kinako.",
+			"prix" : 1.33,
+			"stock" : 3,
+			"categories" : [ 
+				{
+					"ref" : 15 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "caramelCornKinako.jpg" }
+			]
+		}, {
+			"titre" : "Caramel Corn - Yokai Watch",
+			"description" : "Les Caramel Corn sont un snack très populaire au Japon. Ici dans une édition spéciale Yokai Watch au goût tarte aux pommes ! Commandez trois paquets pour obtenir les trois emballages différents.",
+			"prix" : 1.33,
+			"stock" : 5,
+			"categories" : [ 
+				{
+					"ref" : 15 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "caramelCornYokaiWatch.jpg" }
+			]
+		}, {
+			"titre" : "Caramel Corn - Amande",
+			"description" : "Les Caramel Corn sont un snack très populaire au Japon. Voici le nouveau parfum : amande.",
+			"prix" : 1.33,
+			"stock" : 5,
+			"categories" : [ 
+				{
+					"ref" : 15 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "caramelCornAmande.webp" }
+			]
+		}, {
+			"titre" : "Popcorn - Pikachu Snack",
+			"description" : "Nouvel assortiment de popcorns goûts beurre et sauce de soja accompagnés de snacks Pikachu au caramel. Le fabricant est Tohato qui fait entre autres les Caramel Corn.",
+			"prix" : 1.33,
+			"stock" : 5,
+			"categories" : [ 
+				{
+					"ref" : 16 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "popcornPikachu.webp" }
+			]
+		}, {
+			"titre" : "Tyran Habanero Spicy Rings",
+			"description" : "Tohato Tyran Habanero anneaux épicés. Niveau d'épice: 5/5.  ",
+			"prix" : 1.13,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 16 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "tyranHabaneroSpicyRings.webp" }
+			]
 		}
 	]
 }
