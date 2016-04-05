@@ -262,7 +262,6 @@ class Client implements UserInterface, \Serializable {
     }
 
     public function isAdministrateur() {
-        //TODO isAdministrateur
         if(isset($this->roles['ROLE_ADMIN'])) {
             return true;
         } else {

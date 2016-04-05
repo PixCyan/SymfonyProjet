@@ -1,10 +1,14 @@
 vitrine_client:
     resource: "@VitrineBundle/Resources/config/routing/client.yml"
-    prefix:   /client
+    prefix:   admin/client
 
 vitrine_commande:
     resource: "@VitrineBundle/Resources/config/routing/commande.yml"
     prefix:   /commande
+
+vitrine_admin_article:
+        resource: "@VitrineBundle/Resources/config/routing/article.yml"
+        prefix:   /admin/article
 
 vitrine_homepage:
     path: /accueil
