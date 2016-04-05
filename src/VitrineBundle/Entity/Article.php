@@ -32,7 +32,7 @@ class Article
     /**
      * @var int
      *
-     * @ORM\Column(name="prix", type="integer")
+     * @ORM\Column(name="prix", type="float")
      */
     private $prix;
 

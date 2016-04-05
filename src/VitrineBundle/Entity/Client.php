@@ -232,8 +232,8 @@ class Client implements UserInterface, \Serializable {
 
     public function addRole($role)
     {
-        if (!in_array($role, $this->roles, true)) {
-            $this->roles[] = $role;
+        if(!isset($this->roles[$role])) {
+            $this->roles[$role] = $role;
         }
 
         return $this;
@@ -244,7 +244,6 @@ class Client implements UserInterface, \Serializable {
         if (in_array($role, $this->roles, true)) {
             unset($this->roles[$role]);
         }
-
         return $this;
     }
 
@@ -264,6 +263,11 @@ class Client implements UserInterface, \Serializable {
 
     public function isAdministrateur() {
         //TODO isAdministrateur
+        if(isset($this->roles['ROLE_ADMIN'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

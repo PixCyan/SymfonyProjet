@@ -150,7 +150,7 @@
 				}],
 			"images" : [ 
 				{
-					"url" : "marshmallowsCalpis.jpg" }, 
+					"url" : "marshmallowsCalpis.jpg" },
 				{
 					"url": "marshmallowsCalpis2.jpg"
 				}]
@@ -739,7 +739,10 @@
 			"stock" : 8,
 			"categories" : [ 
 				{
-					"ref" : 19 }],
+					"ref" : 19 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "bentoTotoroChatBus.webp" }
@@ -751,7 +754,10 @@
 			"stock" : 10,
 			"categories" : [ 
 				{
-					"ref" : 19 }],
+					"ref" : 19 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "bentoTotoro.webp" },
@@ -765,7 +771,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 19 }],
+					"ref" : 19 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "bentoHelloKitty.webp" }
@@ -777,7 +786,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 19 }],
+					"ref" : 19 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "bentoStarWars3etages.webp" },
@@ -790,7 +802,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 19 }],
+					"ref" : 19 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "bentoBolLunchBox.jpg" },
@@ -803,7 +818,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 20 }],
+					"ref" : 20 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "baguettesTotoroChatBus.webp" }
@@ -815,7 +833,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 20 }],
+					"ref" : 20 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "baguettesMickey.webp" }
@@ -827,7 +848,10 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 20 }],
+					"ref" : 20 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "baguettesStarWars.webp" }
@@ -839,13 +863,136 @@
 			"stock" : 34,
 			"categories" : [ 
 				{
-					"ref" : 21 }],
+					"ref" : 21 },
+				{
+					"ref": 6 
+				}],
 			"images" : [
 				{
 					"url" : "thermosKiki.jpg" },
 				{ "url" : "thermosKiki2.jpg" },
 				{ "url" : "thermosKiki3.jpg" },
 				{ "url" : "thermosKiki4.jpg" }
+			]
+		}, {
+			"titre" : "Thé vert japonais",
+			"description" : "Thé vert japonais en poudre sencha - pour 60 coupes.",
+			"prix" : 1.03,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 4 }],
+			"images" : [
+				{
+					"url" : "theVertJaponais.jpg" }
+			]
+		}, {
+			"titre" : "Calpis",
+			"description" : "Boisson non gazeuse sans alcool aux ferments lactiques qui lui donnent une couleur et une consistance de lait sucré dilué. Très populaire au Japon, cette boisson est commercialisée depuis 1919 sur l'archipel.",
+			"prix" : 1.23,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 4 }],
+			"images" : [
+				{
+					"url" : "calpis.webp" }
+			]
+		}, {
+			"titre" : "Pouding en canette",
+			"description" : "Pouding en canette. Bien secouer avant de boire !",
+			"prix" : 1.03,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 4 }],
+			"images" : [
+				{
+					"url" : "poudingCanette.webp" }
+			]
+		}, {
+			"titre" : "Thé vert en canette",
+			"description" : "Thé vert japonais en canette de marque Itoen.",
+			"prix" : 1.50,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 4 }],
+			"images" : [
+				{
+					"url" : "theVertCanette.webp" }
+			]
+		}, {
+			"titre" : "Maxim - Caramel Macchiato",
+			"description" : "Maxim Stick Menu au caramel, pour préparer son thé au lait chaud ou glacé à la maison. Pour 4 tasses.",
+			"prix" : 1.98,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 4 }],
+			"images" : [
+				{
+					"url" : "maximCaramelMacchiato.jpg" }
+			]
+		}, {
+			"titre" : "Nouilles - Chicken ramen",
+			"description" : "Nouilles ramen instantanées sans accompagnement au goût poulet prêtes en 1 minute. Elles s'accompagnent généralement d'un oeuf cru et d'un peu de ciboule.",
+			"prix" : 1.12,
+			"stock" : 12,
+			"categories" : [ 
+				{
+					"ref" : 5 }],
+			"images" : [
+				{
+					"url" : "nouillesChickenRamen.webp" }
+			]
+		}, {
+			"titre" : "Nouilles - Kare udon",
+			"description" : "Nouilles udon instantannées sans accompagnement avec assaisonnement au curry.",
+			"prix" : 1.12,
+			"stock" : 12,
+			"categories" : [ 
+				{
+					"ref" : 5 }],
+			"images" : [
+				{
+					"url" : "nouillesKareUdon.webp" }
+			]
+		}, {
+			"titre" : "Nouilles - Shio ramen",
+			"description" : "Nouilles ramen instantannées sans accompagnement avec assaisonnement goût ramen salées.",
+			"prix" : 1.12,
+			"stock" : 12,
+			"categories" : [ 
+				{
+					"ref" : 5 }],
+			"images" : [
+				{
+					"url" : "nouillesShioRamen.webp" }
+			]
+		}, {
+			"titre" : "Nouilles - Ramen Pokemon",
+			"description" : "Coupe de nouilles instantanées Pokemon. Goût fruits de mer. Un sticker à collectionner à l'intérieur.",
+			"prix" : 1.46,
+			"stock" : 12,
+			"categories" : [ 
+				{
+					"ref" : 5 }],
+			"images" : [
+				{
+					"url" : "nouillesRamenPokemon.webp" }
+			]
+		}, {
+			"titre" : "Nouilles - Ramen saude de soja",
+			"description" : "Les ramens authentiques de chez Nissin, au goût sauce de soja.",
+			"prix" : 1.46,
+			"stock" : 12,
+			"categories" : [ 
+				{
+					"ref" : 5 }],
+			"images" : [
+				{
+					"url" : "nouillesRamenSauceSoja.webp" }
 			]
 		}
 	]
