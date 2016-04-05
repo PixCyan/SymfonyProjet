@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
+use VitrineBundle\Entity\Image;
 
 class RemplirBDDCommand extends ContainerAwareCommand
 {
@@ -75,7 +76,6 @@ class RemplirBDDCommand extends ContainerAwareCommand
         }
         $article->setLibelle($libelle);
         $article->setDescription($value->description);
-        $article->setImage(" TODO ");
         $article->setPrix($value->prix);
         $article->setStock($value->stock);
         foreach($value->categories as $categorie) {
@@ -90,6 +90,27 @@ class RemplirBDDCommand extends ContainerAwareCommand
                 }
                 $this->updateObjet($article, $update);
             }
+        }
+
+        $i = 0;
+        foreach($value->images as $img) {
+            $image = $this->em->getRepository(Image::class)->findOneByUrl($img->url);
+            if($image) {
+                $updateImg = true;
+            } else {
+                $image = new Image();
+                $updateImg = false;
+            }
+            $image->setUrl($img->url);
+            if($i == 0) {
+                $image->setOrdre(1);
+            } else {
+                $image->setOrdre(2);
+            }
+            $image->setArticle($article);
+            $article->addImage($image);
+            $this->updateObjet($article, $updateImg);
+            $i++;
         }
     }
 

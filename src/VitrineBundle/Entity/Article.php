@@ -46,13 +46,6 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
-     */
-    private $image;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -68,10 +61,16 @@ class Article
      */
     private $lignesDeCommande;
 
+    /**
+     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Image", mappedBy="artcile", cascade={"persist"})
+     */
+    private $images;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->lignesDeCommande = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     /**
@@ -104,6 +103,22 @@ class Article
     public function removeLigneDeCommande(LigneDeCommande $l)
     {
         $this->lignesDeCommande->removeElement($l);
+    }
+
+    /**
+     * Ajoute/lie une image à l'article
+     */
+    public function addImage(Image $image)
+    {
+        $this->images[] = $image;
+    }
+
+    /**
+     * Supprime une image de l'article
+     */
+    public function removeImage(Image $image)
+    {
+        $this->images->removeElement($image);
     }
 
     //----------------- Getters & Setters ------------------------

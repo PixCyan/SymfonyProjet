@@ -582,6 +582,271 @@
 				{
 					"url" : "tyranHabaneroSpicyRings.webp" }
 			]
+		}, {
+			"titre" : "Jagarico - Daurade",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoDaurade.webp" }
+			]
+		}, {
+			"titre" : "Jagarico - Prune amère",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoPruneAmere.webp" }
+			]
+		}, {
+			"titre" : "Jagarico - Salade",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoSalade.webp" }
+			]
+		}, {
+			"titre" : "Jagarico - Fromage",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoFromage.webp" }
+			]
+		}, {
+			"titre" : "Jagarico - Beurre",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoBeurre.webp" }
+			]
+		}, {
+			"titre" : "Jagarico - Beurre et Tarako",
+			"description" : "Bâtonnets de pomme de terre salés. C'est tellement bon ! ",
+			"prix" : 1.29,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 17 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "jagaricoBeurreTarako.webp" }
+			]
+		}, {
+			"titre" : "Umaibo - Pizza",
+			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
+			"prix" : 0.17,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 18 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "umaiboPizza.webp" }
+			]
+		}, {
+			"titre" : "Umaibo - Mentai",
+			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
+			"prix" : 0.17,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 18 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "umaiboPizza.webp" }
+			]
+		}, {
+			"titre" : "Umaibo - Biscotte sucrée",
+			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
+			"prix" : 0.17,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 18 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "umaiboBiscotteSucree.webp" }
+			]
+		}, {
+			"titre" : "Umaibo - Salami",
+			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
+			"prix" : 0.17,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 18 },
+				{
+					"ref": 3 
+				}],
+			"images" : [
+				{
+					"url" : "umaiboSalami.webp" }
+			]
+		}, {
+			"titre" : "Bento Totoro - Chat bus",
+			"description" : "Boîte à bento Mon voisin Totoro de style japonais à deux étages. Des séparateurs amovibles pour les aliments sont inclus. Cette boîte à bento est un produit de grande qualité fabriqué au Japon par l'une des plus grandes entreprises de bento japonaise.",
+			"prix" : 13.76,
+			"stock" : 8,
+			"categories" : [ 
+				{
+					"ref" : 19 }],
+			"images" : [
+				{
+					"url" : "bentoTotoroChatBus.webp" }
+			]
+		}, {
+			"titre" : "Bento Totoro",
+			"description" : "Nouvelle couleur ! Boîte à bento à deux étages Mon Voisin Totoro avec une paire de baguette de 15cm incluse. Cette boîte à bento est un produit de grande qualité fabriqué au Japon par l'une des plus grandes entreprises de bento japonaise.",
+			"prix" : 14.76,
+			"stock" : 10,
+			"categories" : [ 
+				{
+					"ref" : 19 }],
+			"images" : [
+				{
+					"url" : "bentoTotoro.webp" },
+				{ "url" : "bentoTotoro2.jpg" },
+				{ "url" : "bentoTotoro3.jpg" }
+			]
+		}, {
+			"titre" : "Bento - Hello Kitty",
+			"description" : "Boîte à bento Hello Kitty série Sakura et Fujisan à deux étages avec fermeture par bande élastique (fournie). Produit fabriqué au Japon.",
+			"prix" : 13.76,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 19 }],
+			"images" : [
+				{
+					"url" : "bentoHelloKitty.webp" }
+			]
+		}, {
+			"titre" : "Bento - Star Wras 3 étages",
+			"description" : "Boîte à bento Star Wars composée de trois compartiments qui peuvent être utilisés ensemble ou séparément. Nouvelle édition 2016. Produit fabriqué au Japon.",
+			"prix" : 14.76,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 19 }],
+			"images" : [
+				{
+					"url" : "bentoStarWars3etages.webp" },
+				{ "url" : "bentoStarWars3etages2.webp" }
+			]
+		}, {
+			"titre" : "Bento - Bol lunch box noire",
+			"description" : "Très belle boîte à bento à compartiments de la marque Skater, fabricant japonais de bento depuis 1950. Vendu avec son sac de transport.",
+			"prix" : 14.76,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 19 }],
+			"images" : [
+				{
+					"url" : "bentoBolLunchBox.jpg" },
+				{ "url" : "bentoBolLunchBox2.jpg" }
+			]
+		}, {
+			"titre" : "Baguettes Totoro - Chat bus",
+			"description" : "Très belle boîte à bento à compartiments de la marque Skater, fabricant japonais de bento depuis 1950. Vendu avec son sac de transport.",
+			"prix" : 7.74,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 20 }],
+			"images" : [
+				{
+					"url" : "baguettesTotoroChatBus.webp" }
+			]
+		}, {
+			"titre" : "Baguettes Mickey",
+			"description" : "Baguettes pour adulte Mickey Mouse.",
+			"prix" : 7.74,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 20 }],
+			"images" : [
+				{
+					"url" : "baguettesMickey.webp" }
+			]
+		}, {
+			"titre" : "Baguettes Star Wars",
+			"description" : "Baguettes Star Wars et cuillère à bento dans un étui dur Star Wars Comics. Made in Japan.",
+			"prix" : 7.74,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 20 }],
+			"images" : [
+				{
+					"url" : "baguettesStarWars.webp" }
+			]
+		}, {
+			"titre" : "Thermos Kiki",
+			"description" : "Mug isotherme Kiki la petite sorcière d'une contenance de 370ml pour boissons chaudes ou froides.",
+			"prix" : 25.22,
+			"stock" : 34,
+			"categories" : [ 
+				{
+					"ref" : 21 }],
+			"images" : [
+				{
+					"url" : "thermosKiki.jpg" },
+				{ "url" : "thermosKiki2.jpg" },
+				{ "url" : "thermosKiki3.jpg" },
+				{ "url" : "thermosKiki4.jpg" }
+			]
 		}
 	]
 }
