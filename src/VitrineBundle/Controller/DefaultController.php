@@ -48,7 +48,7 @@ class DefaultController extends Controller
         $panier = $session->get('panier');
         if($panier) {
             $contenuPanier = $panier->getContenu();
-            $panier = array();
+            $panier = [];
             if($contenuPanier) {
                 $i = 0;
                 foreach($contenuPanier as $key => $produit) {
@@ -83,6 +83,8 @@ class DefaultController extends Controller
             'client' => $client));
     }
 
+
+    //function pour les tests
     private function initBDD() {
         $em = $this->getDoctrine()->getManager();
 

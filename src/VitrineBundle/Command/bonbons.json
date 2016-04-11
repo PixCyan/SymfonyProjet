@@ -995,5 +995,49 @@
 					"url" : "nouillesRamenSauceSoja.webp" }
 			]
 		}
+	],
+	"clients" : [
+			{
+				"nom" : "Ponom",
+				"prenom" : "Lucas",
+				"mail" : "ponom.lucas@gmail.com",
+				"motDePasse" : "test",
+				"roles" : "ROLE_USER"
+			}, {
+				"nom" : "Admin",
+				"prenom" : "Admin",
+				"mail" : "admin.admin@gmail.com",
+				"motDePasse" : "Admin",
+				"roles" : "ROLE_ADMIN"
+			}, {
+				"nom" : "Bryan",
+				"prenom" : "Thomas",
+				"mail" : "tb@gmail.com",
+				"motDePasse" : "tb",
+				"roles" : "ROLE_USER"
+			}, {
+				"nom" : "Géron",
+				"prenom" : "Cécile",
+				"mail" : "geron.c@gmail.com",
+				"motDePasse" : "geron",
+				"roles" : "ROLE_USER"
+			}, {
+				"nom" : "Kent",
+				"prenom" : "Marie",
+				"mail" : "km@gmail.com",
+				"motDePasse" : "km",
+				"roles" : "ROLE_USER"
+			}, {
+				"nom" : "Revars",
+				"prenom" : "Sarah",
+				"mail" : "rs@gmail.com",
+				"motDePasse" : "rs",
+				"roles" : "ROLE_USER"
+			}
+
+
+
+
+
 	]
 }

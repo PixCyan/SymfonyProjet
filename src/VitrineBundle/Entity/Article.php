@@ -44,6 +44,13 @@ class Article
     private $stock;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="nbVentes", type="integer")
+     */
+    private $nbVentes;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
@@ -71,6 +78,7 @@ class Article
         $this->categories = new ArrayCollection();
         $this->lignesDeCommande = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->nbVentes = 0;
     }
 
     /**
@@ -250,6 +258,38 @@ class Article
     public function setDescription($description)
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbVentes()
+    {
+        return $this->nbVentes;
+    }
+
+    /**
+     * @param int $nbVentes
+     */
+    public function setNbVentes($nbVentes)
+    {
+        $this->nbVentes = $nbVentes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param mixed $images
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
     }
 
 }

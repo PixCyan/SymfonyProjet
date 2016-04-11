@@ -39,7 +39,7 @@ class Client implements UserInterface, \Serializable {
     /**
      * @var string
      *
-     * @ORM\Column(name="mail", type="string", length=255)
+     * @ORM\Column(name="mail", type="string", length=255, unique=true)
      */
     private $mail;
 
@@ -73,6 +73,7 @@ class Client implements UserInterface, \Serializable {
     public function __construct() {
         $this->commandes = new ArrayCollection();
         $this->roles = array();
+        $this->ancienMdp = "";
     }
 
     /**

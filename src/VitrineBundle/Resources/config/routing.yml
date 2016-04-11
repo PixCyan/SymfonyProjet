@@ -1,6 +1,6 @@
 vitrine_client:
     resource: "@VitrineBundle/Resources/config/routing/client.yml"
-    prefix:   admin/client
+    prefix:   /client
 
 vitrine_commande:
     resource: "@VitrineBundle/Resources/config/routing/commande.yml"

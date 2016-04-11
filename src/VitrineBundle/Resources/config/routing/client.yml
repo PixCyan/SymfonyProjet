@@ -1,10 +1,10 @@
 client_index:
-    path:     /
+    path:     /admin
     defaults: { _controller: "VitrineBundle:Client:index" }
     methods:  GET
 
 client_show:
-    path:     show/{id}
+    path:     show/{id}/admin
     defaults: { _controller: "VitrineBundle:Client:show" }
     methods:  GET
 
@@ -14,11 +14,11 @@ client_new:
     methods:  [GET, POST]
 
 client_edit:
-    path:     /edit/{id}
+    path:     /edit/{id}/admin
     defaults: { _controller: "VitrineBundle:Client:edit" }
     methods:  [GET, POST]
 
 client_delete:
-    path:     delete/{id}
+    path:     delete/{id}/admin
     defaults: { _controller: "VitrineBundle:Client:delete" }
     methods:  DELETE

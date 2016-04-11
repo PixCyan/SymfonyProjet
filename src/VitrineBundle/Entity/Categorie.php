@@ -119,4 +119,11 @@ class Categorie
         $this->ordre = $ordre;
     }
 
+    function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->getLibelle();
+    }
+
+
 }

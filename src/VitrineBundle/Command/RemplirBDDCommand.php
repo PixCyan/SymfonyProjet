@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
+use VitrineBundle\Entity\Client;
 use VitrineBundle\Entity\Image;
 
 class RemplirBDDCommand extends ContainerAwareCommand
@@ -37,6 +38,10 @@ class RemplirBDDCommand extends ContainerAwareCommand
             $this->em->flush();
             foreach ($data->articles as $value) {
                 $this->traitementArticles($value);
+                $this->em->flush();
+            }
+            foreach ($data->clients as $value) {
+                $this->traitementClient($value);
                 $this->em->flush();
             }
 
@@ -112,6 +117,28 @@ class RemplirBDDCommand extends ContainerAwareCommand
             $this->updateObjet($article, $updateImg);
             $i++;
         }
+    }
+
+    private function traitementClient($value) {
+        $udpate = false;
+        $client = $this->em->getRepository(Client::class)->findOneByMail($value->mail);
+        if(!$client) {
+            $client = new Client();
+            $udpate = true;
+        }
+        $client->setNom($value->nom);
+        $client->setPrenom($value->prenom);
+        $client->setMail($value->mail);
+        $client->setMotDePasse($value->motDePasse);
+        $encoder = $this->getContainer()->get('security.password_encoder');
+        // On récupère l'encodeur défini dans security.yml
+        $encoded = $encoder->encodePassword($client, $client->getPassword());
+        // On encode le mot de passe issu du formulaire
+        $client->setMotDePasse($encoded);
+        $client->addRole($value->roles);
+
+
+        $this->updateObjet($client, $udpate);
     }
 
     private function updateObjet($objet, $update) {
