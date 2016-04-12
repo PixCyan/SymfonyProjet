@@ -229,22 +229,6 @@ class Article
     }
 
     /**
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    /**
      * @return mixed
      */
     public function getDescription()

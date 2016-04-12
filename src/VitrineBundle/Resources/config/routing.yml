@@ -42,6 +42,10 @@ supprimerPanier:
     path: /panier/supprimer/{id}
     defaults: { _controller: VitrineBundle:Panier:supprimerPanier }
 
+viderPanier:
+    path: /panier/vider
+    defaults: { _controller: VitrineBundle:Panier:viderPanier}
+
 connexion:
     path: /connexion
     defaults: { _controller: VitrineBundle:Client:connexion }

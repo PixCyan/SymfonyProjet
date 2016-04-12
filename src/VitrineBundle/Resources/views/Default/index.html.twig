@@ -8,4 +8,15 @@
         {% else %}
             visiteur
         {% endif %}</p>
+
+    {% if articles is defined and articles is not empty %}
+        <div>
+            <h2> Nos articles les plus vendus </h2>
+            <table>
+                {% for a in articles %}
+                    <tr><td>{{ a.libelle }}</td><td>{{ a.nbVentes }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
 {% endblock %}

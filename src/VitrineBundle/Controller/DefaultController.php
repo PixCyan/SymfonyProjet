@@ -16,7 +16,10 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request) {
         $client = $this->getUser();
-        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client));
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository(Article::class)->articleLesPlusVendus();
+
+        return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client, 'articles' => $articles));
     }
 
     //Fonction pour les mentions légales
@@ -45,7 +48,27 @@ class DefaultController extends Controller
         }
         $produits = $em->getRepository(Article::class)->findAll();
         $session = $request->getSession();
-        $panier = $session->get('panier');
+        $panier = $this->traitementPanier($session->get('panier'));
+
+        return $this->render('VitrineBundle:Default:catalogue.html.twig', array(
+            'produits' => $produits,
+            'client' => $client,
+            'panier' => $panier));
+    }
+
+    public function articleByCatAction(Request $request, $idCategorie) {
+        $client = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
+        $produits = $cat->getArticles();
+        $session = $request->getSession();
+        $panier = $this->traitementPanier($session->get('panier'));
+        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
+            'client' => $client,
+            'panier' => $panier));
+    }
+
+    private function traitementPanier($panier) {
         if($panier) {
             $contenuPanier = $panier->getContenu();
             $panier = [];
@@ -59,30 +82,8 @@ class DefaultController extends Controller
                 }
             }
         }
-        return $this->render('VitrineBundle:Default:catalogue.html.twig', array(
-            'produits' => $produits,
-            'client' => $client,
-            'panier' => $panier));
+        return $panier;
     }
-
-    public function articleByCatAction($idCategorie) {
-        $client = $this->getUser();
-        $em = $this->getDoctrine()->getManager();
-        $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
-        $produits = $cat->getArticles();
-        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
-            'client' => $client));
-    }
-
-    public function showPaniertAction() {
-        $client = $this->getUser();
-        $em = $this->getDoctrine()->getManager();
-        $cat = $em->getRepository(Panier::class)->findOneById();
-        $produits = $cat->getArticles();
-        return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
-            'client' => $client));
-    }
-
 
     //function pour les tests
     private function initBDD() {

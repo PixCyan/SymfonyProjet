@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
+    public function articleLesPlusVendus() {
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('a')
+            ->from('VitrineBundle:Article', 'a')
+            ->orderBy('a.nbVentes', 'DESC')
+            ->setMaxResults(3);
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
+
 }

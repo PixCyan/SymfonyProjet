@@ -9,6 +9,7 @@
         {% endfor %}
         </table>
         {% if panier|length >= 1 %}
+            <p><a href="{{ path('viderPanier') }}"> Vider le panier</a></p>
             <p><a href="{{ path('passerCommande') }}"> Passer commande </a></p>
         {% endif %}
     {% else %}

@@ -55,4 +55,13 @@ class PanierController extends Controller {
         return $this->redirectToRoute('catalogue');
     }
 
+    public function viderPanierAction(Request $request) {
+        $session = $request->getSession();
+        $panier = new Panier();
+        $session->remove('panier');
+        $session->set('panier', $panier);
+
+        return $this->redirectToRoute('catalogue');
+    }
+
 }

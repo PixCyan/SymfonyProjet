@@ -40,10 +40,9 @@ class Panier
     }
 
 
-    public function viderPanier() {
-        //TODO viderPanier
-        $this->contenu = array();
-    }
+    /*public function viderPanier() {
+        $this->contenu = [];
+    }*/
 
     /**
      * @return array
