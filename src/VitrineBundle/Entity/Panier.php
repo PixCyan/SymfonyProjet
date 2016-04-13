@@ -11,7 +11,7 @@ class Panier
 
 
     public function __construct() {
-        $this->contenu = array();
+        $this->contenu = [];
     }
 
     /**
@@ -38,7 +38,6 @@ class Panier
             unset($this->contenu[$article]);
         }
     }
-
 
     /*public function viderPanier() {
         $this->contenu = [];
