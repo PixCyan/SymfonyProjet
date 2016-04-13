@@ -671,7 +671,7 @@
 			"images" : [
 				{
 					"url" : "jagaricoBeurreTarako.webp" }
-			]
+				]
 		}, {
 			"titre" : "Umaibo - Pizza",
 			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
@@ -686,7 +686,7 @@
 			"images" : [
 				{
 					"url" : "umaiboPizza.webp" }
-			]
+				]
 		}, {
 			"titre" : "Umaibo - Mentai",
 			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",
@@ -700,8 +700,8 @@
 				}],
 			"images" : [
 				{
-					"url" : "umaiboPizza.webp" }
-			]
+					"url" : "umaiboMentai.webp" }
+				]
 		}, {
 			"titre" : "Umaibo - Biscotte sucrée",
 			"description" : "Umaibo ou délicieux bâton est un snack de maïs soufflé",

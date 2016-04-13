@@ -69,7 +69,7 @@ class Article
     private $lignesDeCommande;
 
     /**
-     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Image", mappedBy="artcile", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\Image", mappedBy="article", cascade={"persist"})
      */
     private $images;
 
