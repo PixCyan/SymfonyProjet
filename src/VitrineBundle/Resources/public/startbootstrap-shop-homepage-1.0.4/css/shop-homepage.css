@@ -6,10 +6,13 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    /*background: url(../../images/imgBack.png) no-repeat fixed center center;*/
+    background-color: #93b9bc;
 }
 
 .slide-image {
-    width: 100%;
+    width: 50%;
+    margin: auto;
 }
 
 .carousel-holder {
@@ -51,4 +54,11 @@ body {
 
 footer {
     margin: 50px 0;
+}
+
+
+/*  ADD */
+.p-Slide {
+    text-align: right;
+    font-size: 3em;
 }

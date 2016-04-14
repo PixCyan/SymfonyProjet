@@ -16,7 +16,6 @@
 //TODO Correction editClient
         //+ confirmation de mdp
 //TODO upload d'image (création d'un article)
-//TODO les 3 articles les plus vendus
 //TODO suggestions "les clients qui ont acheté ce produit ont aussi acheté..."
 //TODO new client coté client => mettre le role à ROL_USER par défaut
         //+ prendre en compte la confirmation de mdp
