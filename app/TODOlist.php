@@ -10,7 +10,6 @@
 //TODO passer commande => retirer du stock
 //TODO ajouter des commandes dans la BDD
 //TODO getUser partout
-//TODO faire controleur imbriqué pour le menu
 //TODO transition passerCommande => valider la commande => showCommandes
 //TODO profil client connecté
 //TODO Correction editClient
@@ -20,6 +19,6 @@
 //TODO new client coté client => mettre le role à ROL_USER par défaut
         //+ prendre en compte la confirmation de mdp
 
-
+//TODO faire controleur imbriqué pour le menu
 //TODO liste de souhaits si le temps
 //TODO sauvegarde du panier temporaire si le temps (cookie ?)

@@ -1,5 +1,5 @@
 admin_article_index:
-    path:     /
+    path:     /admin
     defaults: { _controller: "VitrineBundle:Article:index" }
     methods:  GET
 
@@ -9,16 +9,16 @@ admin_article_show:
     methods:  GET
 
 admin_article_new:
-    path:     /new
+    path:     /new/admin
     defaults: { _controller: "VitrineBundle:Article:new" }
     methods:  [GET, POST]
 
 admin_article_edit:
-    path:     /{id}/edit
+    path:     /{id}/edit/admin
     defaults: { _controller: "VitrineBundle:Article:edit" }
     methods:  [GET, POST]
 
 admin_article_delete:
-    path:     /{id}/delete
+    path:     /{id}/delete/admin
     defaults: { _controller: "VitrineBundle:Article:delete" }
     methods:  DELETE

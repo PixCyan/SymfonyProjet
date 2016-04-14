@@ -8,7 +8,7 @@ vitrine_commande:
 
 vitrine_admin_article:
         resource: "@VitrineBundle/Resources/config/routing/article.yml"
-        prefix:   /admin/article
+        prefix:   /article
 
 vitrine_homepage:
     path: /accueil
