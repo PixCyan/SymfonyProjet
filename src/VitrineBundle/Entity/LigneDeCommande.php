@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LigneDeCommande
  *
- * @ORM\Table(name="ligne_de_commande")
+ * @ORM\Table(name="ligneDeCommande")
  * @ORM\Entity(repositoryClass="VitrineBundle\Repository\LigneDeCommandeRepository")
  */
 class LigneDeCommande

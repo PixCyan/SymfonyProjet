@@ -69,11 +69,17 @@ class Client implements UserInterface, \Serializable {
      */
     private $commandes;
 
+    /**
+     * @ORM\OneToOne(targetEntity="VitrineBundle\Entity\ListeSouhaits", mappedBy="client")
+     */
+    private $listeSouhaits;
+
 
     public function __construct() {
         $this->commandes = new ArrayCollection();
-        $this->roles = array();
+        $this->roles = [];
         $this->ancienMdp = "";
+        $this->listeSouhaits = new ListeSouhaits();
     }
 
     /**
@@ -268,6 +274,14 @@ class Client implements UserInterface, \Serializable {
         } else {
             return false;
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getListeSouhaits()
+    {
+        return $this->listeSouhaits;
     }
 
 }

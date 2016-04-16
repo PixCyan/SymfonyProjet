@@ -73,11 +73,18 @@ class Article
      */
     private $images;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\ListeSouhaits", inversedBy="articles")
+     * @ORM\JoinTable(name="listeSouhaitsHasArticles")
+     */
+    private $listesSouhaits;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->lignesDeCommande = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->listesSouhaits = new ArrayCollection();
         $this->nbVentes = 0;
     }
 
@@ -127,6 +134,22 @@ class Article
     public function removeImage(Image $image)
     {
         $this->images->removeElement($image);
+    }
+
+    /**
+     * Ajoute/lie une liste de souhait à l'article
+     */
+    public function addListeSouhait(ListeSouhaits $liste)
+    {
+        $this->listesSouhaits[] = $liste;
+    }
+
+    /**
+     * Supprime une liste de souhait à l'article
+     */
+    public function removeListeSouhait(ListeSouhaits $liste)
+    {
+        $this->listesSouhaits->removeElement($liste);
     }
 
     //----------------- Getters & Setters ------------------------
@@ -276,5 +299,20 @@ class Article
         $this->images = $images;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getListesSouhaits()
+    {
+        return $this->listesSouhaits;
+    }
+
+    /**
+     * @param mixed $listesSouhaits
+     */
+    public function setListesSouhaits($listesSouhaits)
+    {
+        $this->listesSouhaits = $listesSouhaits;
+    }
 }
 
