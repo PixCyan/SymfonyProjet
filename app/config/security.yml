@@ -42,3 +42,4 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/client/edit, role: ROLE_ADMIN }
         - { path: ^/commande, role: ROLE_USER }
+        - { path: /admin$, role: ROLE_ADMIN }

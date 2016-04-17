@@ -23,13 +23,17 @@
                         <p>{{ p.article.description }}</p>
                     </div>
                     <div class="ratings">
-                        <p>Stock actuel : {{ p.article.stock }}</p>
+                        <p>Stock actuel : {{ p.article.stock }} <br>
+                            Quantité demandée : {{ p.quantite }}
+                        </p>
+                        <p></p><a href="{{ path('ajouterPanier', {'id': p.article.id }) }} "> Ajouter une quantité</a></p>
+                        <p> <a href="{{ path('supprimerPanier', {'id': p.article.id }) }} "> Retirer une quantité</a></p>
                     </div>
                 </div>
             </div>
             {% endfor %}
             <div>
-                <h3> Total : {{ total }}</h3>
+                <h3> Total : {{ total }}€</h3>
             </div>
         </div>
     {% else %}

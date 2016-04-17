@@ -2,6 +2,7 @@
 
 namespace VitrineBundle\Controller;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
@@ -75,11 +76,13 @@ class DefaultController extends Controller
         $traitement = $this->traitementPanier($session->get('panier'));
         $panier = $traitement['panier'];
         $total = $traitement['total'];
+        $categories = $this->traitementArticle($cat, $produits);
 
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
             'visiteur' => $client,
             'panier' => $panier,
-            'total' => $total));
+            'total' => $total,
+            'ssCat' => $categories));
     }
 
     public function maSelectionAction(Request $request) {
@@ -155,6 +158,18 @@ class DefaultController extends Controller
             }
         }
         return array('total' => $total, 'panier' =>$panier);
+    }
+
+    private function traitementArticle($categorieP, $objets) {
+        $categories = [];
+        foreach($objets as $o) {
+            foreach($o->getCategories() as $c) {
+                if(!in_array($c, $categories) && $c != $categorieP) {
+                    $categories[] = $c;
+                }
+            }
+        }
+        return $categories;
     }
 
     //function pour les tests

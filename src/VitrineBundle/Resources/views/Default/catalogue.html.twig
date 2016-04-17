@@ -3,12 +3,26 @@
 {% block content %}
     <h1> Catalogue </h1>
     {% if produits is defined %}
-        <table>
-            <tr><th> Article </th><th> Prix </th></tr>
+        <div class="row">
             {% for p in produits %}
-                <tr><td> {{ p.libelle }} </td><td> {{ p.prix }}</td><td><a href="{{ path('ajouterPanier', {'id': p.id}) }} "> Ajouter au panier</a></td></tr>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img class="imgShop" src="{{ asset('bundles/vitrine/images/' ~ firstImage(p).url) }}" alt="">
+                        <div class="caption">
+                            <h4 class="pull-right">{{ p.prix }}€</h4>
+                            <h4><a href="{{ path('article_show', {'id': p.id }) }}">{{ p.libelle }} </a>
+                            </h4>
+                            <p>{{ p.description }}</p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right"><a href="{{ path('ajouterPanier', {'id': p.id}) }} "> Ajouter au panier</a></p>
+                            <p class="pull-right"><a href="{{ path('ajouterListeSouhaits', {'id': p.id}) }} "> Ajouter à la liste de souhaits</a></p>
+                            <p>Stock : {{ p.stock }}</p>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </table>
+        </div>
     {% else %}
         <p> Aucun artciles disponible.</p>
     {% endif %}

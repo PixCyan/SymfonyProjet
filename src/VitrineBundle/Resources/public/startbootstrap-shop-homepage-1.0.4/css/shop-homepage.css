@@ -10,6 +10,23 @@ body {
     background-color: #93b9bc;
 }
 
+a.button {
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color : black;
+    padding: 10px;
+    border-radius : 10px;
+}
+
+.flash-notice {
+    background-color: orange;
+    border-radius: 25px;
+    opacity: .6;
+    margin : 5px;
+    padding : 5px;
+}
+
 .panierReduit {
     width : 20%;
     height: 100%;

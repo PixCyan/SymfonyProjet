@@ -2,6 +2,17 @@
 
 {% block content %}
     <h1> Categorie : {{ categorie.libelle }}</h1>
+    {% if ssCat is defined and ssCat is not empty %}
+    <div class="row">
+        <div class="col-md-10">
+            <h4>Sous-categories : </h4>
+        <p>
+
+        {% for c in ssCat %}
+            <a class="button" href="{{ path('articleByCat', {'idCategorie': c.id}) }}">{{ c.libelle }} </a>
+        {% endfor %}
+    </p></div>
+    </div>{% endif %}
     {% if produits is defined %}
         <div class="row">
         {% for p in produits %}

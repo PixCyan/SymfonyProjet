@@ -141,6 +141,7 @@ class CommandeController extends Controller
                 foreach($contenuPanier as $key => $quantite) {
                     $article = $em->getRepository(Article::class)->findOneById($key);
                     $article->setNbVentes($article->getNbventes()+$quantite);
+                    $article->setStock($article->getStock() - $quantite);
                     $ligneCommande = new LigneDeCommande();
                     $ligneCommande->setArticle($article);
                     $ligneCommande->setQuantite($quantite);

@@ -10,6 +10,7 @@ use VitrineBundle\Entity\Panier;
 class PanierController extends Controller {
 
     public function showPanierAction(Request $request) {
+        $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $session = $request->getSession();
         $panier = $session->get('panier');
@@ -30,7 +31,8 @@ class PanierController extends Controller {
             }
         }
         $session->set('client', 1);
-        return $this->render('VitrineBundle:panier:panier.html.twig', array('panier' => $panier, 'total' => $total));
+        return $this->render('VitrineBundle:panier:panier.html.twig', array('panier' => $panier, 'total' => $total,
+            'visiteur' => $client));
     }
 
     public function ajouterPanierAction(Request $request, $id, $quantite = 1) {
