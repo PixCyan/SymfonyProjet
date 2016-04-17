@@ -79,7 +79,6 @@ class Client implements UserInterface, \Serializable {
         $this->commandes = new ArrayCollection();
         $this->roles = [];
         $this->ancienMdp = "";
-        $this->listeSouhaits = new ListeSouhaits();
     }
 
     /**
@@ -284,4 +283,11 @@ class Client implements UserInterface, \Serializable {
         return $this->listeSouhaits;
     }
 
+    /**
+     * @param mixed $listeSouhaits
+     */
+    public function setListeSouhaits($listeSouhaits)
+    {
+        $this->listeSouhaits = $listeSouhaits;
+    }
 }

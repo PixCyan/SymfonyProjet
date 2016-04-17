@@ -1,10 +1,16 @@
 {% extends "VitrineBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1> Categorie : {{ categorie.libelle }}</h1>
-    {% if produits is defined %}
-        <div class="row">
-        {% for p in produits %}
+    <h1>Liste de souhaits : {{ visiteur.nom }} {{ visiteur.prenom }}</h1>
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    <div class="row">
+    {% if selection.articles is not empty %}
+        <p> {{ selection.nom }} </p>
+        {% for p in selection.articles %}
             <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
                     <img class="imgShop" src="{{ asset('bundles/vitrine/images/' ~ firstImage(p).url) }}" alt="">
@@ -15,23 +21,16 @@
                         <p>{{ p.description }}</p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right"><a href="{{ path('ajouterPanier', {'id': p.id}) }} "> Ajouter au panier</a></p>
-                        <p class="pull-right"><a href="{{ path('ajouterListeSouhaits', {'id': p.id}) }} "> Ajouter à la liste de souhaits</a></p>
                         <p>Stock : {{ p.stock }}</p>
+                        <p class="pull-right"><a href="{{ path('ajouterPanier', {'id': p.id}) }} "> Ajouter au panier</a></p>
+                        <p><a href="{{ path('retirerListeSouhaits', {'id': p.id}) }} "> Retirer de la liste</a></p>
+
                     </div>
                 </div>
             </div>
         {% endfor %}
-        </div>
     {% else %}
-        <article>
-            <p> Aucun article disponible.</p>
-        </article>
-
+        <p> Aucun article dans votre liste de souhaits.</p>
     {% endif %}
-
-
-
-
-
+    </div>
 {% endblock %}

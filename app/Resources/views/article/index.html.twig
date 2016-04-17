@@ -17,7 +17,7 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <td><a href="{{ path('admin_article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
+                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
                 <td>{{ article.libelle }}</td>
                 <td>{{ article.prix }}</td>
                 <td>{{ article.stock }}</td>
@@ -25,7 +25,7 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_article_show', { 'id': article.id }) }}">show</a>
+                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
                         </li>
                         <li>
                             <a href="{{ path('admin_article_edit', { 'id': article.id }) }}">edit</a>

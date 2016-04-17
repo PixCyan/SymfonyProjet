@@ -10,6 +10,7 @@ use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
 use VitrineBundle\Entity\Image;
+use VitrineBundle\Entity\ListeSouhaits;
 
 class RemplirBDDCommand extends ContainerAwareCommand
 {
@@ -120,11 +121,15 @@ class RemplirBDDCommand extends ContainerAwareCommand
     }
 
     private function traitementClient($value) {
-        $udpate = false;
+        $udpate = true;
         $client = $this->em->getRepository(Client::class)->findOneByMail($value->mail);
         if(!$client) {
             $client = new Client();
-            $udpate = true;
+            $listeSouhaits = new ListeSouhaits();
+            $listeSouhaits->setClient($client);
+            $client->setListeSouhaits($listeSouhaits);
+            $this->em->persist($listeSouhaits);
+            $udpate = false;
         }
         $client->setNom($value->nom);
         $client->setPrenom($value->prenom);

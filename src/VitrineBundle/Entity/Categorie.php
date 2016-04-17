@@ -121,7 +121,6 @@ class Categorie
 
     function __toString()
     {
-        // TODO: Implement __toString() method.
         return $this->getLibelle();
     }
 

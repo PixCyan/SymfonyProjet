@@ -58,3 +58,15 @@ passerCommande:
 commandes:
     path: /commandes
     defaults: { _controller: VitrineBundle:Commande:showCommandes }
+
+maSelection:
+    path: /ma_selection/
+    defaults: { _controller: VitrineBundle:Default:maSelection }
+
+ajouterListeSouhaits:
+    path: /ma_selection/ajouter/{id}
+    defaults: { _controller: VitrineBundle:Default:ajouterListeSouhaits }
+
+retirerListeSouhaits:
+    path: /ma_selection/retirer/{id}
+    defaults: { _controller: VitrineBundle:Default:retirerListeSouhaits }

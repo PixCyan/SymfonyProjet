@@ -126,10 +126,4 @@ class ListeSouhaits
         $this->articles = $articles;
     }
 
-    function __toString()
-    {
-        return $this->getNom();
-    }
-
-
 }

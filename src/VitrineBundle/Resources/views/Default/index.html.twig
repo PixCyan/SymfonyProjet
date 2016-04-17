@@ -18,9 +18,11 @@
                         {% else %}
                             <div class="item">
                         {% endif %}
-                            <img class="slide-image" src="{{ asset('bundles/vitrine/images/' ~ firstImage(a).url) }}" alt="">
+                            <a href="{{ path('article_show', {'id': a.id }) }}">
+                            <img class="slide-image" src="{{ asset('bundles/vitrine/images/' ~ firstImage(a).url) }}" alt=""/>
+                            </a>
                                 <p class="p-Slide"> {{ a.libelle }} {{ a.nbVentes }} </p>
-                        </div>
+                            </div>
                     {% endfor %}
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

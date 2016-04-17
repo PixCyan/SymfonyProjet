@@ -1,5 +1,62 @@
 <div class="menu">
     {% block menu %}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('vitrine_homepage') }}">Kawaii Shop</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!-- Menu déroulant -->
+                        <li>
+                            <a href="{{ path('vitrine_homepage') }}">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contenuPanier') }}">Panier</a>
+                        </li>
+                        <li class="dropdown">
+                            {% if visiteur is not defined or visiteur is empty %}
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Connexion <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <!-- Si non connecté -->
+                                    <li><a href="{{ path('client_new') }} "> S'enregistrer </a></li>
+                                    <li><a href="{{ path('login') }}"> Se connecter </a></li>
+                                {% else %}
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mon compte<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                    <!-- Si connecté-->
+                                    <li><a href="#"> Mon profil </a></li>
+                                    <li><a href="{{ path('commandes') }}"> Mes commandes </a></li>
+                                    <li><a href="{{ path('maSelection') }}"> Ma lsite de souhaits </a></li>
+                                    <li><a href="{{ path('logout') }}"> Se déconnecter </a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Administration <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href={{ path('client_index') }}>Gestion des utilisateurs </a> </li>
+                                <li><a href="{{ path('admin_article_index') }}"> Gestion des prodtuis</a></li>
+                            </ul>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+
         <!-- <ul>
             <a class="btn" href="{{ path('vitrine_homepage', {'visiteur': "Nadia"}) }}"> Accueil </a>
             <li> Categories
@@ -34,49 +91,5 @@
             </li>
             {% endif %}
         </ul> -->
-
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ path('vitrine_homepage') }}">Kawaii Shop</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <!-- Menu déroulant -->
-                        <li>
-                            <a href="{{ path('vitrine_homepage') }}">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('contenuPanier') }}">Panier</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Connexion <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                {% if visiteur is not defined or visiteur is empty %}
-                                    <!-- Si non connecté -->
-                                    <li><a href="{{ path('client_new') }} "> S'enregistrer </a></li>
-                                    <li><a href="{{ path('login') }}"> Se connecter </a></li>
-                                {% else %}
-                                    <!-- Si connecté-->
-                                    <li><a href="#"> Mon profil </a></li>
-                                    <li><a href="{{ path('commandes') }}"> Mes commandes </a></li>
-                                    <li><a href="{{ path('logout') }}"> Se déconnecter </a></li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
     {% endblock %}
 </div>

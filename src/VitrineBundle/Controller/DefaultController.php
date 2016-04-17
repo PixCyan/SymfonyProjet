@@ -59,7 +59,7 @@ class DefaultController extends Controller
 
         return $this->render('VitrineBundle:Default:catalogue.html.twig', array(
             'produits' => $produits,
-            'client' => $client,
+            'visiteur' => $client,
             'panier' => $panier));
     }
 
@@ -71,9 +71,61 @@ class DefaultController extends Controller
         $session = $request->getSession();
         $panier = $this->traitementPanier($session->get('panier'));
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
-            'client' => $client,
+            'visiteur' => $client,
             'panier' => $panier));
     }
+
+    public function maSelectionAction(Request $request) {
+        $client = $this->getUser();
+        if($client) {
+            $selection = $client->getListeSouhaits();
+        } else {
+            throw $this->createNotFoundException('Vous n\'êtes pas connecté !');
+        }
+        $session = $request->getSession();
+        $panier = $this->traitementPanier($session->get('panier'));
+        return $this->render('VitrineBundle:user:selectionClient.html.twig', array(
+            'selection' => $selection,
+            'visiteur' => $client,
+            'panier' => $panier));
+    }
+
+    public function ajouterListeSouhaitsAction(Request $request, $id) {
+        $client = $this->getUser();
+        if(!$client) {
+            throw $this->createNotFoundException('Vous n\'êtes pas connecté !');
+        }
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository(Article::class)->findOneById($id);
+        $liste = $client->getListeSouhaits();
+        if(!$liste->getArticles()->contains($article)) {
+            $liste->addArticle($article);
+            $article->addListeSouhait($liste);
+            $em->merge($liste);
+            $em->merge($article);
+            $em->flush();
+        }
+        return $this->redirectToRoute('maSelection');
+    }
+
+    public function retirerListeSouhaitsAction(Request $request, $id) {
+        $client = $this->getUser();
+        if(!$client) {
+            throw $this->createNotFoundException('Vous n\'êtes pas connecté !');
+        }
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository(Article::class)->findOneById($id);
+        $liste = $client->getListeSouhaits();
+        if($liste->getArticles()->contains($article)) {
+            $liste->removeArticle($article);
+            $article->removeListeSouhait($liste);
+            $em->merge($liste);
+            $em->merge($article);
+            $em->flush();
+        }
+        return $this->redirectToRoute('maSelection');
+    }
+
 
     private function traitementPanier($panier) {
         if($panier) {
