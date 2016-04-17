@@ -1034,10 +1034,50 @@
 				"motDePasse" : "rs",
 				"roles" : "ROLE_USER"
 			}
-
-
-
-
-
+	],
+	"commandes" : [
+			{
+				"utilisateur" : 3,
+				"articles" : [
+					{
+						"id" : 12,
+						"quantite" : 4
+					}, {
+						"id" : 3,
+						"quantite" : 2
+					}, {
+						"id" : 12,
+						"quantite" : 3
+					}
+				]
+			}, {
+				"utilisateur" : 1,
+				"articles" : [
+					{
+						"id" : 2,
+						"quantite" : 4
+					}, {
+						"id" : 7,
+						"quantite" : 2
+					}, {
+						"id" : 8,
+						"quantite" : 3
+					}
+				]
+			}, {
+				"utilisateur" : 4,
+				"articles" : [
+					{
+						"id" : 9,
+						"quantite" : 4
+					}, {
+						"id" : 7,
+						"quantite" : 2
+					}, {
+						"id" : 3,
+						"quantite" : 3
+					}
+				]
+			}
 	]
 }

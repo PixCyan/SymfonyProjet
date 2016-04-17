@@ -9,7 +9,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use VitrineBundle\Entity\Article;
 use VitrineBundle\Entity\Categorie;
 use VitrineBundle\Entity\Client;
+use VitrineBundle\Entity\Commande;
 use VitrineBundle\Entity\Image;
+use VitrineBundle\Entity\LigneDeCommande;
 use VitrineBundle\Entity\ListeSouhaits;
 
 class RemplirBDDCommand extends ContainerAwareCommand
@@ -43,6 +45,10 @@ class RemplirBDDCommand extends ContainerAwareCommand
             }
             foreach ($data->clients as $value) {
                 $this->traitementClient($value);
+                $this->em->flush();
+            }
+            foreach ($data->commandes as $value) {
+                $this->traitementCommandes($value);
                 $this->em->flush();
             }
 
@@ -144,6 +150,33 @@ class RemplirBDDCommand extends ContainerAwareCommand
 
 
         $this->updateObjet($client, $udpate);
+    }
+
+    private function traitementCommandes($value) {
+        $newCommande = new Commande();
+        $client = $this->em->getRepository(Client::class)->findOneById($value->utilisateur);
+        foreach($value->articles as $a) {
+            //print($a->id);
+            $article = $this->em->getRepository(Article::class)->findOneById($a->id);
+            if($article) {
+                $article->setNbVentes($article->getNbventes() + $a->quantite);
+                $article->setStock($article->getStock() - $a->quantite);
+                $ligneCommande = new LigneDeCommande();
+                $ligneCommande->setArticle($article);
+                $ligneCommande->setQuantite($a->quantite);
+                $ligneCommande->setCommande($newCommande);
+                $newCommande->addLigneDeCommande($ligneCommande);
+                $newCommande->setClient($client);
+                $newCommande->setEtat(true);
+                $client->addCommande($newCommande);
+
+                $this->em->persist($newCommande);
+                $this->em->persist($ligneCommande);
+                $this->em->merge($client);
+            }
+        }
+
+        $this->em->flush();
     }
 
     private function updateObjet($objet, $update) {
