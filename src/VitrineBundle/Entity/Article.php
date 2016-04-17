@@ -218,8 +218,12 @@ class Article
      */
     public function setStock($stock)
     {
-        $this->stock = $stock;
 
+        if(($this->getStock() - $stock) <= 0) {
+            $this->stock = 0;
+        } else {
+            $this->stock = $stock;
+        }
         return $this;
     }
 

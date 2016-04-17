@@ -159,6 +159,7 @@ class CommandeController extends Controller
                 }
                 $em->flush();
             }
+            $panier = $session->set('panier', array());
         }
         return $this->redirectToRoute('commandes');
     }
