@@ -20,12 +20,11 @@ class ArticleController extends Controller
      */
     public function indexAction()
     {
+        $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
-
         $articles = $em->getRepository('VitrineBundle:Article')->findAll();
-
         return $this->render('article/index.html.twig', array(
-            'articles' => $articles,
+            'articles' => $articles, 'visiteur' => $client
         ));
     }
 
@@ -35,6 +34,7 @@ class ArticleController extends Controller
      */
     public function newAction(Request $request)
     {
+        $client = $this->getUser();
         $article = new Article();
         $form = $this->createForm('VitrineBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
@@ -50,6 +50,7 @@ class ArticleController extends Controller
         return $this->render('article/new.html.twig', array(
             'article' => $article,
             'form' => $form->createView(),
+            'visiteur' => $client
         ));
     }
 
@@ -59,11 +60,13 @@ class ArticleController extends Controller
      */
     public function showAction(Article $article)
     {
+        $client = $this->getUser();
         $deleteForm = $this->createDeleteForm($article);
 
         return $this->render('article/show.html.twig', array(
             'article' => $article,
             'delete_form' => $deleteForm->createView(),
+            'visiteur' => $client
         ));
     }
 
@@ -73,6 +76,7 @@ class ArticleController extends Controller
      */
     public function editAction(Request $request, Article $article)
     {
+        $client = $this->getUser();
         $deleteForm = $this->createDeleteForm($article);
         $editForm = $this->createForm('VitrineBundle\Form\ArticleType', $article);
         $editForm->handleRequest($request);
@@ -89,6 +93,7 @@ class ArticleController extends Controller
             'article' => $article,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'visiteur' => $client
         ));
     }
 
@@ -98,6 +103,7 @@ class ArticleController extends Controller
      */
     public function deleteAction(Request $request, Article $article)
     {
+        $client = $this->getUser();
         $form = $this->createDeleteForm($article);
         $form->handleRequest($request);
 

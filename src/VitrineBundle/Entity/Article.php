@@ -59,12 +59,12 @@ class Article
 
     /**
      * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\Categorie", inversedBy="articles", cascade={"persist"})
-     * @ORM\JoinTable(name="articlestHascategories")
+     * @ORM\JoinTable(name="articlesHasCategories")
      */
     private $categories;
 
     /**
-     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\LigneDeCommande", mappedBy="artcile")
+     * @ORM\OneToMany(targetEntity="VitrineBundle\Entity\LigneDeCommande", mappedBy="article")
      */
     private $lignesDeCommande;
 
@@ -74,7 +74,7 @@ class Article
     private $images;
 
     /**
-     * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\ListeSouhaits", inversedBy="articles")
+     * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\ListeSouhaits", inversedBy="articles", cascade={"persist"})
      * @ORM\JoinTable(name="listeSouhaitsHasArticles")
      */
     private $listesSouhaits;

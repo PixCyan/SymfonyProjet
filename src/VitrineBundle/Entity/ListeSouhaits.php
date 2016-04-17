@@ -35,7 +35,7 @@ class ListeSouhaits
     private $client;
 
     /**
-     * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\Article", mappedBy="listesSouhaits")
+     * @ORM\ManyToMany(targetEntity="VitrineBundle\Entity\Article", mappedBy="listesSouhaits", cascade={"persist"})
      */
     private $articles;
 
@@ -93,4 +93,43 @@ class ListeSouhaits
     {
         return $this->nom;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param mixed $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
+    }
+
+    function __toString()
+    {
+        return $this->getNom();
+    }
+
+
 }

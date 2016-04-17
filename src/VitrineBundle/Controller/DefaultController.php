@@ -17,6 +17,14 @@ class DefaultController extends Controller
     public function indexAction(Request $request) {
         $client = $this->getUser();
         $em = $this->getDoctrine()->getManager();
+        if($article = $em->getRepository(Article::class)->findAll() == null) {
+            //$this->initBDD();
+            $command = new RemplirBDDCommand();
+            $command->setContainer($this->container);
+            $input = new ArrayInput(array());
+            $output = new NullOutput();
+            $resultCode = $command->run($input, $output);
+        }
         $articles = $em->getRepository(Article::class)->articleLesPlusVendus();
 
         return $this->render('VitrineBundle:Default:index.html.twig', array('visiteur' => $client, 'articles' => $articles));
@@ -39,7 +47,6 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         if($article = $em->getRepository(Article::class)->findOneById(1) == null) {
             //$this->initBDD();
-            //TODO traitement des données
             $command = new RemplirBDDCommand();
             $command->setContainer($this->container);
             $input = new ArrayInput(array('some-param' => 10, '--some-option' => true));

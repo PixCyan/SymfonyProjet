@@ -31,15 +31,12 @@ class LigneDeCommande
     /**
      * @ORM\ManyToOne(targetEntity="VitrineBundle\Entity\Article", inversedBy="lignesDeCommande")
      */
-    private  $artcile;
+    private  $article;
 
     /**
      * @ORM\ManyToOne(targetEntity="VitrineBundle\Entity\Commande", inversedBy="lignesDeCommande")
      */
     private $commande;
-
-
-
 
     //----------------- Getters & Setters ------------------------
 

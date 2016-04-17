@@ -26,7 +26,7 @@ class RemplirBDDCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         //$this->em = $this->getDoctrine()->getManager();
-        $this->em = $this->getApplication()->getKernel()->getContainer()->get('doctrine')->getManager();
+        $this->em = $this->getContainer()->get('doctrine')->getManager();
 
         try {
             //Récupération fichiers :
