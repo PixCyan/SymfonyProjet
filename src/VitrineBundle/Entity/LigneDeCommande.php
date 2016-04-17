@@ -87,7 +87,7 @@ class LigneDeCommande
      */
     public function getArticle()
     {
-        return $this->artcile;
+        return $this->article;
     }
 
     /**
@@ -95,7 +95,7 @@ class LigneDeCommande
      */
     public function setArticle($artcile)
     {
-        $this->artcile = $artcile;
+        $this->article = $artcile;
     }
 }
 

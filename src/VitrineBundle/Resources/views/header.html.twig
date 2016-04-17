@@ -50,46 +50,11 @@
                         </li>
                         {% endif %}
                     </ul>
+                    </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
-
-
-        <!-- <ul>
-            <a class="btn" href="{{ path('vitrine_homepage', {'visiteur': "Nadia"}) }}"> Accueil </a>
-            <li> Categories
-                <ul>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 1}) }}"> Bonbons </a></li>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 2}) }}"> Chocolats </a></li>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 3}) }}"> Snacks </a></li>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 4}) }}"> Boissons </a></li>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 5}) }}"> Nouilles </a></li>
-                    <li><a class="btn" href="{{ path('articleByCat', {'idCategorie': 6}) }}"> Bento </a></li>
-                </ul>
-            </li>
-            <li><a class="btn" href="{{ path('catalogue') }}"> Catalogue </a></li>
-            <li>Connexion
-                <ul>
-                    {% if visiteur is not defined or visiteur is empty %}
-                        <li><a href="{{ path('client_new') }} "> S'enregistrer </a></li>
-                        <li><a href="{{ path('login') }}"> Se connecter </a></li>
-                        <li><a href="{{ path('contenuPanier') }}"> Panier </a></li>
-                    {% else %}
-                        <li><a href="#"> Mon profil </a></li>
-                        <li><a href="{{ path('logout') }}"> Se déconnecter </a></li>
-                    {% endif %}
-                </ul>
-            </li>
-            {% if is_granted('ROLE_ADMIN') %}
-            <li> Admininistration
-                <ul>
-                    <li><a href={{ path('client_index') }}>Gestion des utilisateurs </a> </li>
-                    <li><a href="{{ path('admin_article_index') }}"> Gestion des prodtuis</a></li>
-                </ul>
-            </li>
-            {% endif %}
-        </ul> -->
     {% endblock %}
 </div>

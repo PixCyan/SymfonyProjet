@@ -1,17 +1,37 @@
 {% block panier %}
+
     <h1> Panier </h1>
+    {% if panier|length >= 1 %}
+        <p><a href="{{ path('viderPanier') }}"> Vider le panier</a></p>
+        <p><a href="{{ path('passerCommande') }}"> Passer commande </a></p>
+    {% endif %}
+    {% for flash_message in app.session.flashbag.get('panier') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
     {% if panier is defined and panier is not empty %}
-        <table>
-        {% for key, produit in panier %}
-            <tr><td>{{ produit.article.libelle }} quantité : {{ produit.quantite }} </td>
-                <td><a href="{{ path('ajouterPanier', {'id': produit.article.id }) }} "> Ajouter une quantité</a>
-                    <a href="{{ path('supprimerPanier', {'id': produit.article.id }) }} "> Retirer un produit</a></td></tr>
-        {% endfor %}
-        </table>
-        {% if panier|length >= 1 %}
-            <p><a href="{{ path('viderPanier') }}"> Vider le panier</a></p>
-            <p><a href="{{ path('passerCommande') }}"> Passer commande </a></p>
-        {% endif %}
+        <div class="row">
+        {% for p in panier %}
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img class="imgShop" src="{{ asset('bundles/vitrine/images/' ~ firstImage(p.article).url) }}" alt="">
+                    <div class="caption">
+                        <h4 class="pull-right">{{ p.article.prix }}€</h4>
+                        <h4><a href="{{ path('article_show', {'id': p.article.id }) }}">{{ p.article.libelle }} </a>
+                        </h4>
+                        <p>{{ p.article.description }}</p>
+                    </div>
+                    <div class="ratings">
+                        <p>Stock actuel : {{ p.article.stock }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div>
+                <h3> Total : {{ total }}</h3>
+            </div>
+        </div>
     {% else %}
         <p> Votre panier est vide.</p>
     {% endif %}

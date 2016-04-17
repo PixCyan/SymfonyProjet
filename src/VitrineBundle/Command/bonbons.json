@@ -1004,10 +1004,10 @@
 				"motDePasse" : "test",
 				"roles" : "ROLE_USER"
 			}, {
-				"nom" : "Admin",
-				"prenom" : "Admin",
-				"mail" : "admin.admin@gmail.com",
-				"motDePasse" : "Admin",
+				"nom" : "admin",
+				"prenom" : "admin",
+				"mail" : "admin@gmail.com",
+				"motDePasse" : "admin",
 				"roles" : "ROLE_ADMIN"
 			}, {
 				"nom" : "Bryan",

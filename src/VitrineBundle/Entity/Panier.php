@@ -18,19 +18,27 @@ class Panier
      * Ajoute/lie une categorie à l'article
      */
     public function ajouterArticle($article, $quantite = 1) {
-        if(empty($this->contenu[$article])) {
-            $this->contenu[$article] = $quantite;
+        $etat = "ok";
+        if(empty($this->contenu[$article->getId()])) {
+            if($quantite <= $article->getStock()) {
+                $this->contenu[$article->getId()] = $quantite;
+            } else {
+                $etat = "La quantité demandée est supérieur au stock de cet article.";
+            }
         } else {
-            $c = $this->getContenu();
-            $this->contenu[$article] += 1;
+            if($this->contenu[$article->getId()] + $quantite <=  $article->getStock()) {
+                $this->contenu[$article->getId()] += 1;
+            } else {
+                $etat = "La quantité demandée est supérieur au stock de cet article.";
+            }
         }
+        return $etat;
     }
 
     /**
      * Supprime une categorie de l'article
      */
     public function supprimerArticle($article) {
-       //TODO supprimer
         if($this->contenu[$article] > 1) {
             $c = $this->getContenu();
             $this->contenu[$article] -= 1;

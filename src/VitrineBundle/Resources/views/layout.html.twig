@@ -21,14 +21,19 @@
             <div class="row">
 
                 <div class="col-md-2">
-                    <p class="lead">Categories</p>
-                    <div class="list-group">
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 1}) }}"> Bonbons </a>
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 2}) }}"> Chocolats </a>
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 3}) }}"> Snacks </a>
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 4}) }}"> Boissons </a>
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 5}) }}"> Nouilles </a>
-                        <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 6}) }}"> Bento </a>
+                    <div class="row">
+                        <p class="lead">Categories</p>
+                        <div class="list-group">
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 1}) }}"> Bonbons </a>
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 2}) }}"> Chocolats </a>
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 3}) }}"> Snacks </a>
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 4}) }}"> Boissons </a>
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 5}) }}"> Nouilles </a>
+                            <a class="list-group-item" href="{{ path('articleByCat', {'idCategorie': 6}) }}"> Bento </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% include "VitrineBundle:panier:panierReduit.html.twig"%}
                     </div>
                 </div>
 
@@ -36,11 +41,6 @@
                     {% block content %}
                     {% endblock %}
                 </div>
-            </div>
-            <div class="col-md-3">
-                {% block panier %}
-                    {% include "VitrineBundle:panier:contenuPanier.html.twig"%}
-                {% endblock %}
             </div>
         </div>
 

@@ -55,12 +55,15 @@ class DefaultController extends Controller
         }
         $produits = $em->getRepository(Article::class)->findAll();
         $session = $request->getSession();
-        $panier = $this->traitementPanier($session->get('panier'));
+        $traitement = $this->traitementPanier($session->get('panier'));
+        $panier = $traitement['panier'];
+        $total = $traitement['total'];
 
         return $this->render('VitrineBundle:Default:catalogue.html.twig', array(
             'produits' => $produits,
             'visiteur' => $client,
-            'panier' => $panier));
+            'panier' => $panier,
+            'total' => $total));
     }
 
     public function articleByCatAction(Request $request, $idCategorie) {
@@ -69,10 +72,14 @@ class DefaultController extends Controller
         $cat = $em->getRepository(Categorie::class)->findOneById($idCategorie);
         $produits = $cat->getArticles();
         $session = $request->getSession();
-        $panier = $this->traitementPanier($session->get('panier'));
+        $traitement = $this->traitementPanier($session->get('panier'));
+        $panier = $traitement['panier'];
+        $total = $traitement['total'];
+
         return $this->render('VitrineBundle:article:articleParCategorie.html.twig', array('produits' => $produits, 'categorie' =>$cat,
             'visiteur' => $client,
-            'panier' => $panier));
+            'panier' => $panier,
+            'total' => $total));
     }
 
     public function maSelectionAction(Request $request) {
@@ -83,11 +90,14 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('Vous n\'êtes pas connecté !');
         }
         $session = $request->getSession();
-        $panier = $this->traitementPanier($session->get('panier'));
+        $traitement = $this->traitementPanier($session->get('panier'));
+        $panier = $traitement['panier'];
+        $total = $traitement['total'];
         return $this->render('VitrineBundle:user:selectionClient.html.twig', array(
             'selection' => $selection,
             'visiteur' => $client,
-            'panier' => $panier));
+            'panier' => $panier,
+            'total' => $total));
     }
 
     public function ajouterListeSouhaitsAction(Request $request, $id) {
@@ -128,6 +138,7 @@ class DefaultController extends Controller
 
 
     private function traitementPanier($panier) {
+        $total = 0;
         if($panier) {
             $contenuPanier = $panier->getContenu();
             $panier = [];
@@ -136,12 +147,14 @@ class DefaultController extends Controller
                 foreach($contenuPanier as $key => $produit) {
                     $em = $this->getDoctrine()->getManager();
                     $article = $em->getRepository(Article::class)->findOneById($key);
+                    $calc =$article->getPrix() * $produit;
+                    $total += $calc;
                     $panier[$i] = array('article' => $article, 'quantite' => $produit);
                     $i++;
                 }
             }
         }
-        return $panier;
+        return array('total' => $total, 'panier' =>$panier);
     }
 
     //function pour les tests

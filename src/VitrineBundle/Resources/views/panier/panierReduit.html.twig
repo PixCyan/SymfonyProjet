@@ -1,0 +1,29 @@
+{% block panier %}
+    {% for flash_message in app.session.flashbag.get('panier') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {% if panier is defined and panier is not empty %}
+        <div class="">
+            <h4> Panier </h4>
+            <div class="thumbnail">
+        {% for p in panier %}
+            <div>
+                <h5 class="pull-right">{{ p.article.prix }}€</h5>
+                <h5><a href="{{ path('article_show', {'id': p.article.id }) }}">{{ p.article.libelle }} </a></h5>
+                <p> Qt :  {{ p.quantite }}
+                    <a href="{{ path('ajouterPanier', {'id': p.article.id }) }} "> +</a>
+                </p>
+            </div>
+            {% endfor %}
+                <div>
+                    <p> Total : {{ total }}</p>
+                </div>
+            </div>
+
+        </div>
+    {% else %}
+        <p> Votre panier est vide.</p>
+    {% endif %}
+{% endblock %}

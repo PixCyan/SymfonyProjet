@@ -23,9 +23,7 @@ class CommandeController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $commandes = $em->getRepository('VitrineBundle:Commande')->findAll();
-
         return $this->render('commande/index.html.twig', array(
             'commandes' => $commandes,
         ));
@@ -139,6 +137,7 @@ class CommandeController extends Controller
             if($contenuPanier) {
                 $commande = new Commande();
                 $i = 0;
+
                 foreach($contenuPanier as $key => $quantite) {
                     $article = $em->getRepository(Article::class)->findOneById($key);
                     $article->setNbVentes($article->getNbventes()+$quantite);
